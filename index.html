@@ -45,6 +45,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -68,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, kaiwen" />
 
 
 
@@ -80,12 +106,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="kaiwen&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="kaiwen&#39;s blog">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="kaiwen&#39;s blog">
 
 
 
@@ -121,7 +147,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>kaiwen's blog</title>
   
 
 
@@ -152,7 +178,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">kaiwen's blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -187,16 +213,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -227,12 +243,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Schedule
+            About
           </a>
         </li>
       
@@ -272,13 +288,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/LINUX-初体验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="kaiwen's blog">
     </span>
 
     
@@ -311,6 +327,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux-shell/" itemprop="url" rel="index">
+                    <span itemprop="name">linux&&shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -340,26 +378,19 @@
       
         
           
-            <h1 id="linux-入门"><a href="#linux-入门" class="headerlink" title="linux 入门"></a>linux 入门</h1><h3 id="工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。"><a href="#工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。" class="headerlink" title="工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。"></a>工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。</h3><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><p><img src="https://s1.ax1x.com/2018/08/05/PDLrVI.jpg" alt="PDLrVI.jpg"></p>
-<ul>
-<li><p>1.1 在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点开始的倒置的树状结构。</p>
-</li>
-<li><p>1.2 文件系统的最顶层是由根目录开始的，系统使用 / 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。</p>
-</li>
-<li><p>1.3 在Linux文件系统中有两个特殊的目录，一个用户所在的工作目录，也叫当前目录，可以使用一个点 . 来表示；另一个是当前目录的上一级目录，也叫父目录，可以使用两个点 .. 来表示。</p>
-</li>
-<li>. ：代表当前的目录，也可以使用 ./ 来表示；</li>
-<li>.. ：代表上一层目录，也可以 ../ 来代表。</li>
-<li>如果一个目录或文件名以一个点 . 开始，表示这个目录或文件是一个隐藏目录或文件(如：.bashrc)。即以默认方式查找时，不显示该目录或文件。</li>
-</ul>
-<h2 id="2-文件相关操作"><a href="#2-文件相关操作" class="headerlink" title="2.文件相关操作"></a>2.文件相关操作</h2><h3 id="2-1-删除文件"><a href="#2-1-删除文件" class="headerlink" title="2.1 删除文件"></a>2.1 删除文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm file.txt      //删除文件，后面可以跟多个文件，以空格隔开</span><br><span class="line">rm -rf 文件夹    // 递归删除整个目录，并且不询问用户[强制删除]</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-新建文件"><a href="#2-2-新建文件" class="headerlink" title="2.2 新建文件"></a>2.2 新建文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi test.txt     //若果当前目录木有test.txt文件，则会自动新建</span><br><span class="line">touch test.txt   // 新建test.txt文件</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-更改文件属组"><a href="#2-3-更改文件属组" class="headerlink" title="2.3 更改文件属组"></a>2.3 更改文件属组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown users:jessie file1.txt  //修改文件file1.txt 为jessie组的users用户所有</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-更改文件属性-读-写-执行"><a href="#2-3-更改文件属性-读-写-执行" class="headerlink" title="2.3 更改文件属性[读\写\执行]"></a>2.3 更改文件属性[读\写\执行]</h3><p>Linux/Unix 的文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">chmod [-cfvR] [--help] [--version] mode file...</span><br><span class="line">权限设定参数：[ugoa...][[+-=][rwxX]...][,...]</span><br><span class="line"></span><br><span class="line">u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</span><br><span class="line">+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。</span><br><span class="line">r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</span><br><span class="line"></span><br><span class="line">chmod a+r file1.txt   将文件 file1.txt 设为所有人皆可读取 </span><br><span class="line">chmod u+x ex1.py      将 ex1.py 设定为只有该文件拥有者可以执行</span><br><span class="line">chmod -R a+r *        将目前目录下的所有文件与子目录皆设为任何人可读取，[其中R代表递归操作]</span><br><span class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`</span><br><span class="line">chmod 777 file</span><br><span class="line"></span><br><span class="line">其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。</span><br><span class="line"></span><br><span class="line">r=4，w=2，x=1</span><br><span class="line">若要rwx属性则4+2+1=7；</span><br><span class="line">若要rw-属性则4+2=6；</span><br><span class="line">若要r-x属性则4+1=5。</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-4-解压、压缩文件"><a href="#2-4-解压、压缩文件" class="headerlink" title="2.4 解压、压缩文件"></a>2.4 解压、压缩文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip 目录   //将传入目录里的文件压缩为zip文件,并放置在上一级目录</span><br><span class="line">unzip file.zip  //将file.zip解压并放在当前目录</span><br><span class="line">unzip file.zip -d cn  //将file.zip解压并存放在cn目录，没有此目录会自动新建</span><br></pre></td></tr></table></figure>
-<h2 id="3-权限相关操作"><a href="#3-权限相关操作" class="headerlink" title="3.权限相关操作"></a>3.权限相关操作</h2><h2 id="3-其他"><a href="#3-其他" class="headerlink" title="3.其他"></a>3.其他</h2><p>【未完待续】</p>
+          linux 入门工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。1.基础知识
 
-          
+1.1 在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点开始的倒置的树状结构。
+
+1.2 文件系
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/07/LINUX-初体验/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -409,13 +440,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="kaiwen's blog">
     </span>
 
     
@@ -477,17 +508,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/06/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -558,9 +587,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg"
-                alt="John Doe" />
+                alt="Kaiwen0425" />
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">Kaiwen0425</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -578,13 +607,59 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
             
 
           </nav>
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kaiweno425" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaiwen0425@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kaiwen0425/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5075683550?refer_flag=1001030101_&is_hot=1" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -616,7 +691,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Kaiwen0425</span>
 
   
 </div>
@@ -677,13 +752,26 @@
   
 
 
+  
 
 
 
+  
+  
 
 
 
+  
+  
 
+
+
+  
+  
+
+
+
+  
 
 
 
@@ -715,6 +803,36 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   
 
 
@@ -797,6 +915,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
 
   
 
