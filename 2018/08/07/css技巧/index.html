@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,前端," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="此文引用自：火头军人 ,仅为学习目的。  在页面构建中，能明显提升页面显示质量的一些CSS小技巧。很多简洁美观的页面表现，可以使用CSS3代码即可实现，减少图片的使用。 一、边框内圆角我们在设计例如按钮等控件的时候，会遇到这样的设计：只有内侧有圆角，而边框或者描边的四个角还是保持直角的形状，用以下代码可以轻松的实现。  1234567891011121314151617#wrapper &amp;#12">
+<meta name="keywords" content="css,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css技巧(一)">
+<meta property="og:url" content="http://yoursite.com/2018/08/07/css技巧/index.html">
+<meta property="og:site_name" content="kaiwen&#39;s blog">
+<meta property="og:description" content="此文引用自：火头军人 ,仅为学习目的。  在页面构建中，能明显提升页面显示质量的一些CSS小技巧。很多简洁美观的页面表现，可以使用CSS3代码即可实现，减少图片的使用。 一、边框内圆角我们在设计例如按钮等控件的时候，会遇到这样的设计：只有内侧有圆角，而边框或者描边的四个角还是保持直角的形状，用以下代码可以轻松的实现。  1234567891011121314151617#wrapper &amp;#12">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/Pc6Rjx.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/Pc6IED.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/Pc6oUe.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/Pc6qgI.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/Pc6Lvt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccCCj.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccGqK.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccdGd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccwRA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/Pccsqf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccfRs.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccIs0.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/08/12/PccboF.jpg">
+<meta property="og:updated_time" content="2018-08-12T12:03:03.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css技巧(一)">
+<meta name="twitter:description" content="此文引用自：火头军人 ,仅为学习目的。  在页面构建中，能明显提升页面显示质量的一些CSS小技巧。很多简洁美观的页面表现，可以使用CSS3代码即可实现，减少图片的使用。 一、边框内圆角我们在设计例如按钮等控件的时候，会遇到这样的设计：只有内侧有圆角，而边框或者描边的四个角还是保持直角的形状，用以下代码可以轻松的实现。  1234567891011121314151617#wrapper &amp;#12">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/08/12/Pc6Rjx.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'kaiwen0425'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/07/css技巧/"/>
+
+
+
+
+
+  <title>css技巧(一) | kaiwen's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kaiwen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/css技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaiwen0425">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kaiwen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css技巧(一)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-07T00:00:38+08:00">
+                2018-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>此文引用自：<a href="https://mp.weixin.qq.com/s/jxaFwejRpr5AeSZRJjptzA" target="_blank" rel="noopener">火头军人</a> ,仅为学习目的。</p>
+</blockquote>
+<p>在页面构建中，能明显提升页面显示质量的一些CSS小技巧。很多简洁美观的页面表现，可以使用CSS3代码即可实现，<strong>减少图片的使用</strong>。</p>
+<h2 id="一、边框内圆角"><a href="#一、边框内圆角" class="headerlink" title="一、边框内圆角"></a>一、边框内圆角</h2><p>我们在设计例如按钮等控件的时候，会遇到这样的设计：只有内侧有圆角，而边框或者描边的四个角还是保持直角的形状，用以下代码可以轻松的实现。</p>
+<p><img src="https://s1.ax1x.com/2018/08/12/Pc6Rjx.png" alt="content"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line"></span><br><span class="line">    #content &#123;</span><br><span class="line">        <span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line">        <span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br><span class="line">        <span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br><span class="line">        <span class="selector-tag">height</span>: 100%;</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">rgb</span>(85, 136, 187);</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span><br><span class="line">        <span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br><span class="line">        <span class="selector-tag">border-radius</span>: 20<span class="selector-tag">px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种解决方案需要使用到两个 dom 元素，那么如果只使用一个 dom 元素，应该怎么实现？</p>
+<p>这里需要用到 CSS 的两个属性： box-shadow 和 outline 属性，具体属性参见MDN。</p>
+<blockquote>
+<p>box-shadow属性有以下5个特性</p>
+<ul>
+<li>\<inset>    </inset></li>
+<li>\<offset-x> <offset-y></offset-y></offset-x></li>
+<li>\<blur-radius></blur-radius></li>
+<li>\<spread-radius></spread-radius></li>
+<li>\<color></color></li>
+</ul>
+</blockquote>
+<p>这里我们将使用第四个属性 spread-radius 来填充效果当中的空白。同时利用 outline 的特性：描边不跟随边框绘制的特点来实现（因为不清楚这是不是一个bug，所以在将来的版本中可能会改变），具体代码如下。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: 0 0 0 10<span class="selector-tag">px</span> <span class="selector-tag">rgb</span>(255, 187, 51);</span><br><span class="line"><span class="selector-tag">outline</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgb</span>(255, 187, 51);</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/08/12/Pc6IED.png" alt="content2"></p>
+<p>这种实现方式，对于边框的宽度和圆角的大小有一定的限制效果。仅当边框宽度 w 与圆角半径 r 存在 w ≥ (√2-1)r 关系时才可实现.</p>
+<h2 id="二、条纹背景"><a href="#二、条纹背景" class="headerlink" title="二、条纹背景"></a>二、条纹背景</h2><p>如何使用CSS来实现条纹？</p>
+<p><img src="https://s1.ax1x.com/2018/08/12/Pc6oUe.png" alt="content3"></p>
+<ol>
+<li>使用  linear-gradient 属性实现</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#stripe</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(rgb(255, 187, 51), <span class="built_in">rgb</span>(85, 136, 187));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/08/12/Pc6qgI.png" alt="content4"></p>
+<ol start="2">
+<li>尝试修改 linear-gradient 属性，当linear-gradient属性</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(rgb(255, 187, 51) 50%, rgb(85, 136, 187) 50%);</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/08/12/Pc6Lvt.png" alt="content5"></p>
+<ol start="3">
+<li>因为条纹是由 background-image 属性生成的，因此当然也可以使用 background-size 属性来改变它的大小</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-size</span>: 100% 40<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2018/08/12/PccCCj.png" alt="content6"></p>
+<p>如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(rgb(255, 187, 51) 60%, rgb(85, 136, 187) 0);</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://s1.ax1x.com/2018/08/12/PccGqK.png" alt="content7"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 33<span class="selector-class">.3</span>%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 66<span class="selector-class">.6</span>%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(170, 255, 0) 0</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="垂直条纹"><a href="#垂直条纹" class="headerlink" title="垂直条纹"></a>垂直条纹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(to right, rgb(255, 187, 51) 60%, rgb(85, 136, 187) 0);</span><br></pre></td></tr></table></figure>
+<p>默认值为 to bottom ，可以设置 to right; to left 等</p>
+<p><img src="https://s1.ax1x.com/2018/08/12/PccdGd.png" alt=""></p>
+<h3 id="斜条纹"><a href="#斜条纹" class="headerlink" title="斜条纹"></a>斜条纹</h3><p><img src="https://s1.ax1x.com/2018/08/12/PccwRA.png" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(45<span class="selector-tag">deg</span>, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 25%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 50%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 0%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 75%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0</span><br><span class="line">);</span><br><span class="line"><span class="selector-tag">background-size</span>: 30<span class="selector-tag">px</span> 30<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+<p>为了达到斜条纹等宽的视觉效果，需要运用到勾股定理来计算宽度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-size: 42px 42px;</span><br></pre></td></tr></table></figure></p>
+<p>介绍 linear-gradient 的升级版 ：  repeating-linear-gradient</p>
+<p>可以试着使用 linear-gradient 和 repeating-linear-gradient 实现同样的60°斜条纹进行对比</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(60<span class="selector-tag">deg</span>,</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51), </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 25%,</span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 50%,</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 75%,</span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 100%</span><br><span class="line">);</span><br><span class="line"><span class="selector-tag">background-size</span>: 18<span class="selector-tag">px</span> 31<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">repeating-linear-gradient</span>(60<span class="selector-tag">deg</span>,</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51), </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 15<span class="selector-tag">px</span>, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 30<span class="selector-tag">px</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="三、平行四边形和梯形"><a href="#三、平行四边形和梯形" class="headerlink" title="三、平行四边形和梯形"></a>三、平行四边形和梯形</h2><p>使用 transform 属性可以很轻松的创建一个平行四边形</p>
+<p><img src="https://s1.ax1x.com/2018/08/12/Pccsqf.png" alt="Pccsqf.png"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(85, 136, 187);</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">skewX</span>(-30deg);</span><br><span class="line">    span &#123;</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">skewX</span>(30<span class="selector-tag">deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>缺点：需要两个元素、修改的话需要修改两个地方。</p>
+<p>如何使用一个元素就实现这样的效果。</p>
+<p>解决办法：将平行四边形的背景设置在伪元素上，对伪元素进行变形。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">120px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">600</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line"></span><br><span class="line">    &amp;::after &#123;</span><br><span class="line">        content: '';</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 0;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">right</span>: 0;</span><br><span class="line">        <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">skewX</span>(<span class="selector-tag">-30deg</span>);</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">rgb</span>(85, 136, 187);</span><br><span class="line">        <span class="selector-tag">z-index</span>: <span class="selector-tag">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>梯形的概念比平行四边形更加宽泛，只需要两条边平行即可。梯形常用于标签页，之前常用伪元素方法来实现一个梯形。<br><img src="https://s1.ax1x.com/2018/08/12/PccfRs.png" alt="PccfRs.png"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trapezoid</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">180px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(85, 136, 170);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(255, 255, 255);</span><br><span class="line"></span><br><span class="line">    &amp;::before,</span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;<span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">border-top</span>: <span class="number">180px</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-bottom</span>: <span class="number">0</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-right</span>: <span class="number">100px</span> solid <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">right</span>: -<span class="number">240px</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">border-top</span>: <span class="number">180px</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-bottom</span>: <span class="number">0</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-left</span>: <span class="number">240px</span> solid <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>缺点：</p>
+<ul>
+<li>把两个伪元素都使用了；</li>
+<li>需要修改形状时，需要修改的方过多；</li>
+<li>不能给梯形加边框、阴影；</li>
+<li><p>不能设置成圆角梯形；</p>
+<p>通过构造平行四边形的思想，对矩形进行变形。但是这次不采用 2d 平面的变形，而是 3d 平面变形，通过视觉差来构造一个梯形。</p>
+</li>
+</ul>
+<p>这里需要用到 transform 属性3d变换特性：</p>
+<ul>
+<li>perspective</li>
+<li>rotate3d (rotateX rotateY rotateZ)</li>
+<li>transform-origin</li>
+<li>scale3d (scaleX scaleY scaleZ)<br>实现一个最简单的梯形所需要的代码只有以下一行：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(30<span class="selector-tag">deg</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>与 2d 变换不同，3d 内部变形是不可逆的，因此与构造平行四边形相似，我们也可以将图形的变形放在伪元素上。</p>
+<p><img src="https://s1.ax1x.com/2018/08/12/PccIs0.png" alt="PccIs0.png"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trapezoid</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">180px</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(255, 255, 255);</span><br><span class="line"></span><br><span class="line">    &amp;::before &#123;</span><br><span class="line">        content: '';</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 0;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">right</span>: 0;</span><br><span class="line">        <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">rgb</span>(85, 136, 170);</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(30<span class="selector-tag">deg</span>);</span><br><span class="line">        <span class="selector-tag">z-index</span>: <span class="selector-tag">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优化</p>
+<p>1、修改 transform-origin 属性，控制转动轴<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform-origin</span>: <span class="selector-tag">bottom</span>;</span><br></pre></td></tr></table></figure></p>
+<p>2、通过 scale3d 属性而非 padding 属性来修正视觉大小，同时兼顾了优雅降级<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(30<span class="selector-tag">deg</span>) <span class="selector-tag">scaleY</span>(2<span class="selector-class">.25</span>);</span><br></pre></td></tr></table></figure></p>
+<p>3、添加圆角、阴影、背景渐变<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>, <span class="selector-tag">rgb</span>(85, 136, 170), <span class="selector-tag">rgb</span>(255, 187, 51));</span><br><span class="line"><span class="selector-tag">border-top-right-radius</span>: 60<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-top-left-radius</span>: 60<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">box-shadow</span>: 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 1<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(85, 136, 170, <span class="selector-class">.2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>4、改变 transform-origin 得到不同斜边的梯形<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(10<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">transform-origin</span>: <span class="selector-tag">left</span>;</span><br></pre></td></tr></table></figure></p>
+<p>缺点</p>
+<p>斜边的角度依赖于元素的宽度。因此，当元素的内容长度不等时，想要得到斜度一致的梯形就不容易了。</p>
+<p>3d 变换具体实现原理参见 matrix3d</p>
+<h2 id="四、阴影"><a href="#四、阴影" class="headerlink" title="四、阴影"></a>四、阴影</h2><p>投影首先会想到 box-shadow 这个属性，根据以上的介绍，我们可以轻松的做出一个元素的阴影</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#shadow</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">240px</span> <span class="number">120px</span> <span class="number">0</span> <span class="number">0</span> red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么如何针对一张图片实现其对应的阴影？在页面的例如头像显示会遇到这种效果<br><img src="https://s1.ax1x.com/2018/08/12/PccboF.jpg" alt="PccboF.jpg"></p>
+<p>这里将会使用到CSS3里面的 filter 属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#logo</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'../img/logo.svg'</span>) no-repeat;</span><br><span class="line"></span><br><span class="line">    &amp;::after &#123;</span><br><span class="line">        content: '';</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 40<span class="selector-tag">px</span>;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">width</span>: 100%;</span><br><span class="line">        <span class="selector-tag">height</span>: 100%;</span><br><span class="line">        background: url('../img/logo.svg') no-repeat;</span><br><span class="line">        <span class="selector-tag">background-size</span>: 100% 100%;</span><br><span class="line">        <span class="selector-tag">filter</span>: <span class="selector-tag">blur</span>(10<span class="selector-tag">px</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wx.jpg" alt="Kaiwen0425 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号关注我。</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/06/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/07/LINUX-初体验/" rel="prev" title="LINUX 初体验">
+                LINUX 初体验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg"
+                alt="Kaiwen0425" />
+            
+              <p class="site-author-name" itemprop="name">Kaiwen0425</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kaiweno425" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaiwen0425@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kaiwen0425/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5075683550?refer_flag=1001030101_&is_hot=1" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、边框内圆角"><span class="nav-number">1.</span> <span class="nav-text">一、边框内圆角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、条纹背景"><span class="nav-number">2.</span> <span class="nav-text">二、条纹背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直条纹"><span class="nav-number">2.1.</span> <span class="nav-text">垂直条纹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斜条纹"><span class="nav-number">2.2.</span> <span class="nav-text">斜条纹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、平行四边形和梯形"><span class="nav-number">3.</span> <span class="nav-text">三、平行四边形和梯形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、阴影"><span class="nav-number">4.</span> <span class="nav-text">四、阴影</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaiwen0425</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
