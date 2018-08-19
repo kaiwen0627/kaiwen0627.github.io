@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, kaiwen" />
+  <meta name="keywords" content="linux,后台,服务器,shell," />
 
 
 
@@ -105,17 +105,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="本文主要是对linux下的shell编程相关知识做一下总结。  1.什么是SHELL？什么是SHELL脚本？ Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。   Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。   Shell 脚本（shell script），是一">
+<meta name="keywords" content="linux,后台,服务器,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/08/06/hello-world/index.html">
+<meta property="og:title" content="LINUX 初体验(二)">
+<meta property="og:url" content="http://yoursite.com/2018/08/19/LINUX-初体验（二）/index.html">
 <meta property="og:site_name" content="kaiwen&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="本文主要是对linux下的shell编程相关知识做一下总结。  1.什么是SHELL？什么是SHELL脚本？ Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。   Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。   Shell 脚本（shell script），是一">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-10-28T00:39:58.000Z">
+<meta property="og:updated_time" content="2018-08-19T03:56:02.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="LINUX 初体验(二)">
+<meta name="twitter:description" content="本文主要是对linux下的shell编程相关知识做一下总结。  1.什么是SHELL？什么是SHELL脚本？ Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。   Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。   Shell 脚本（shell script），是一">
 
 
 
@@ -145,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/06/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/19/LINUX-初体验（二）/"/>
 
 
 
 
 
-  <title>Hello World | kaiwen's blog</title>
+  <title>LINUX 初体验(二) | kaiwen's blog</title>
   
 
 
@@ -288,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/LINUX-初体验（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
@@ -305,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">LINUX 初体验(二)</h1>
         
 
         <div class="post-meta">
@@ -317,8 +318,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-06T23:32:15+08:00">
-                2018-08-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-19T12:00:38+08:00">
+                2018-08-19
               </time>
             
 
@@ -327,6 +328,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux-shell/" itemprop="url" rel="index">
+                    <span itemprop="name">linux&&shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -355,15 +378,65 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <blockquote>
+<p>本文主要是对linux下的shell编程相关知识做一下总结。</p>
+</blockquote>
+<h2 id="1-什么是SHELL？什么是SHELL脚本？"><a href="#1-什么是SHELL？什么是SHELL脚本？" class="headerlink" title="1.什么是SHELL？什么是SHELL脚本？"></a>1.什么是SHELL？什么是SHELL脚本？</h2><blockquote>
+<p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p>
+</blockquote>
+<blockquote>
+<p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
+</blockquote>
+<blockquote>
+<p>Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。由于习惯的原因，简洁起见，本文出现的 “shell编程” 都是指 shell 脚本编程，不是指开发 shell 自身。</p>
+</blockquote>
+<p><strong><em>简单来说，shell和shell脚本就是雷锋与雷峰塔的区别，听着都与雷锋有关而已。</em></strong></p>
+<h2 id="2-shell脚本"><a href="#2-shell脚本" class="headerlink" title="2.shell脚本"></a>2.shell脚本</h2><ul>
+<li>shell脚本就是将一些linux操作命令集成为“.sh”脚本</li>
+<li><p>shell脚本第一行一般如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shell脚本运行的方法：</p>
+<p>  1.作为解释器参数</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash ./text.sh</span><br></pre></td></tr></table></figure>
+<p>  2.作为可执行程序</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./text.sh</span><br></pre></td></tr></table></figure>
+<p>  <strong><em>注意，一定要写成 ./test.sh，而不是 test.sh，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</em></strong></p>
+</li>
+</ul>
+<h2 id="3-shell编程注意事项："><a href="#3-shell编程注意事项：" class="headerlink" title="3.shell编程注意事项："></a>3.shell编程注意事项：</h2><h3 id="1-变量-amp-amp-字符串"><a href="#1-变量-amp-amp-字符串" class="headerlink" title="1. 变量&amp;&amp;字符串"></a>1. 变量&amp;&amp;字符串</h3><ul>
+<li>字符串变量定义时，单引号里面不能有其他变量拼接，会原样输出；在双引号里面可以包含其他变量引用后输出。</li>
+<li>定义变量时，变量名不加美元符号$,使用变量需要在前边加 <strong><em>$num</em></strong> 或者写成 <strong><em>${num}</em></strong>  。</li>
+<li><p>变量重新赋值不属于使用变量，不需要加$ 。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">your_name=<span class="string">"kw"</span>                  <span class="comment">#定义变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$your_name</span>                    <span class="comment">#使用变量</span></span><br><span class="line">your_name=<span class="string">"tiantian"</span>               <span class="comment">#重新赋值</span></span><br><span class="line"><span class="built_in">echo</span> your name is <span class="variable">$your_name</span> !     <span class="comment">#使用变量</span></span><br><span class="line"><span class="built_in">echo</span> your name is <span class="variable">$&#123;your_name&#125;</span> !   <span class="comment">#使用变量</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串拼接直接将变量“放置”在对于位置即可。</p>
+<blockquote>
+<p>变量相关其他知识可以参考 <a href="http://www.runoob.com/linux/linux-shell-variable.html" target="_blank" rel="noopener">菜鸟教程</a> 相关章节。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-参数传递"><a href="#2-参数传递" class="headerlink" title="2.参数传递"></a>2.参数传递</h3><p><strong><em>shell执行机制本身就比较”傻”，它会从上到下一条条命令执行。假如没有做容错处理，执行错误了，也不会停止，会继续执行下面的命令直到脚本底部</em></strong></p>
+<p>假如测试脚本 file.sh 如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Shell 传递参数实例！"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行的文件名：<span class="variable">$0</span>"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"第一个参数为：<span class="variable">$1</span>"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"第二个参数为：<span class="variable">$2</span>"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"第三个参数为：<span class="variable">$3</span>"</span>;</span><br></pre></td></tr></table></figure>
+<p>我们调用执行他：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x file.sh <span class="comment">#给文件file.sh添加自执行权限 </span></span><br><span class="line">./file.sh 1 2 3  <span class="comment">#调用脚本并传入参数</span></span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Shell 传递参数实例！</span><br><span class="line">执行的文件名：./file.sh</span><br><span class="line">第一个参数为：1</span><br><span class="line">第二个参数为：2</span><br><span class="line">第三个参数为：3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>shell的脚本调用传参必须严格遵守传参顺序</p>
+</blockquote>
+<h2 id="4-shell数组"><a href="#4-shell数组" class="headerlink" title="4.shell数组"></a>4.shell数组</h2><p>1.定义方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr=(A B <span class="string">"C"</span> D)</span><br></pre></td></tr></table></figure>
+<p>2.注意点：</p>
+<ul>
+<li>数组定义以 () 包裹。</li>
+<li>shell数组只支持一维数组。</li>
+<li>shell数组元素以空格分割</li>
+<li>数组元素获取方法和JScript相同。  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr1=arr[0]   <span class="comment">#获取数组第一个元素</span></span><br><span class="line">arrL=arr[@]   <span class="comment">#获取数组长度</span></span><br><span class="line">arrL=arr[*]   <span class="comment">#同上</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>【未完待续】</p>
 
       
     </div>
@@ -387,6 +460,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/后台/" rel="tag"># 后台</a>
+          
+            <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          
+            <a href="/tags/shell/" rel="tag"># shell</a>
+          
+        </div>
+      
 
       
       
@@ -396,15 +481,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/12/css技巧/" rel="next" title="css技巧(一)">
+                <i class="fa fa-chevron-left"></i> css技巧(一)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/07/LINUX-初体验/" rel="prev" title="LINUX 初体验">
-                LINUX 初体验 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -568,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是SHELL？什么是SHELL脚本？"><span class="nav-number">1.</span> <span class="nav-text">1.什么是SHELL？什么是SHELL脚本？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-shell脚本"><span class="nav-number">2.</span> <span class="nav-text">2.shell脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-shell编程注意事项："><span class="nav-number">3.</span> <span class="nav-text">3.shell编程注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量-amp-amp-字符串"><span class="nav-number">3.1.</span> <span class="nav-text">1. 变量&amp;&amp;字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-参数传递"><span class="nav-number">3.2.</span> <span class="nav-text">2.参数传递</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-shell数组"><span class="nav-number">4.</span> <span class="nav-text">4.shell数组</span></a></li></ol></div>
             
 
           </div>
