@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, kaiwen" />
+  <meta name="keywords" content="前端,react,redux,react-redux," />
 
 
 
@@ -105,14 +105,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="上面一章说到了redux。这一节总结一下redux在react中的使用。即：react——redux React-reduxRedux 官方提供的 React 绑定库。 具有高效且灵活的特性。  通俗理解：    请参考 redux和react-redux小记 非常浅显明白，给赞！！！  1.安装 1npm install --save react-redux 2.使用疑问">
+<meta name="keywords" content="前端,react,redux,react-redux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux(二)">
+<meta property="og:url" content="http://yoursite.com/2018/08/22/redux(二)/index.html">
 <meta property="og:site_name" content="kaiwen&#39;s blog">
+<meta property="og:description" content="上面一章说到了redux。这一节总结一下redux在react中的使用。即：react——redux React-reduxRedux 官方提供的 React 绑定库。 具有高效且灵活的特性。  通俗理解：    请参考 redux和react-redux小记 非常浅显明白，给赞！！！  1.安装 1npm install --save react-redux 2.使用疑问">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-11T03:46:43.629Z">
+<meta property="og:updated_time" content="2018-08-29T13:59:10.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="Redux(二)">
+<meta name="twitter:description" content="上面一章说到了redux。这一节总结一下redux在react中的使用。即：react——redux React-reduxRedux 官方提供的 React 绑定库。 具有高效且灵活的特性。  通俗理解：    请参考 redux和react-redux小记 非常浅显明白，给赞！！！  1.安装 1npm install --save react-redux 2.使用疑问">
 
 
 
@@ -142,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/22/redux(二)/"/>
 
 
 
 
 
-  <title>tags | kaiwen's blog</title>
+  <title>Redux(二) | kaiwen's blog</title>
   
 
 
@@ -273,40 +277,191 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/redux(二)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaiwen0425">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kaiwen's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                10 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/css/" style="font-size: 12px; color: #ccc">css</a> <a href="/tags/git/" style="font-size: 18px; color: #8e8e8e">git</a> <a href="/tags/linux/" style="font-size: 24px; color: #4f4f4f">linux</a> <a href="/tags/react/" style="font-size: 18px; color: #8e8e8e">react</a> <a href="/tags/react-redux/" style="font-size: 12px; color: #ccc">react-redux</a> <a href="/tags/redux/" style="font-size: 18px; color: #8e8e8e">redux</a> <a href="/tags/shell/" style="font-size: 18px; color: #8e8e8e">shell</a> <a href="/tags/前端/" style="font-size: 30px; color: #111">前端</a> <a href="/tags/后台/" style="font-size: 18px; color: #8e8e8e">后台</a> <a href="/tags/服务器/" style="font-size: 18px; color: #8e8e8e">服务器</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Redux(二)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T22:00:38+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>上面一章说到了redux。这一节总结一下redux在react中的使用。即：react——redux</p>
+<h2 id="React-redux"><a href="#React-redux" class="headerlink" title="React-redux"></a>React-redux</h2><p>Redux 官方提供的 React 绑定库。 具有高效且灵活的特性。</p>
+<ul>
+<li>通俗理解：    请参考 <a href="https://www.cnblogs.com/bax-life/p/8440326.html" target="_blank" rel="noopener">redux和react-redux小记</a> 非常浅显明白，给赞！！！</li>
+</ul>
+<p>1.安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-redux</span><br></pre></td></tr></table></figure>
+<p>2.使用疑问</p>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wx.jpg" alt="Kaiwen0425 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号关注我。</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+            <a href="/tags/redux/" rel="tag"># redux</a>
+          
+            <a href="/tags/react-redux/" rel="tag"># react-redux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/21/vi操作指南/" rel="next" title="vi 操作指南">
+                <i class="fa fa-chevron-left"></i> vi 操作指南
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/22/redux(一)/" rel="prev" title="Redux(一)">
+                Redux(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -339,8 +494,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -432,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React-redux"><span class="nav-number">1.</span> <span class="nav-text">React-redux</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
