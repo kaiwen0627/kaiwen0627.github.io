@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript,算法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript 语言基础部分1. 数组部分1.1 去重123456789101112131415161718const arr=[1,2,&apos;2&apos;,2,3,4,5];// 1. ES6 Setconst set=[...new Set(arr)]console.log(set);    // [ 1, 2,&apos;2&apos;, 3, 4, 5 ]// 2.for循环function uniq(arr) &amp;">
+<meta name="keywords" content="javascript,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript算法（壹）">
+<meta property="og:url" content="http://yoursite.com/2019/07/23/javascript算法（壹）/index.html">
+<meta property="og:site_name" content="kaiwen&#39;s blog">
+<meta property="og:description" content="JavaScript 语言基础部分1. 数组部分1.1 去重123456789101112131415161718const arr=[1,2,&apos;2&apos;,2,3,4,5];// 1. ES6 Setconst set=[...new Set(arr)]console.log(set);    // [ 1, 2,&apos;2&apos;, 3, 4, 5 ]// 2.for循环function uniq(arr) &amp;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-28T01:35:21.251Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript算法（壹）">
+<meta name="twitter:description" content="JavaScript 语言基础部分1. 数组部分1.1 去重123456789101112131415161718const arr=[1,2,&apos;2&apos;,2,3,4,5];// 1. ES6 Setconst set=[...new Set(arr)]console.log(set);    // [ 1, 2,&apos;2&apos;, 3, 4, 5 ]// 2.for循环function uniq(arr) &amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'kaiwen0425'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/23/javascript算法（壹）/"/>
+
+
+
+
+
+  <title>javascript算法（壹） | kaiwen's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kaiwen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/javascript算法（壹）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaiwen0425">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kaiwen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript算法（壹）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-23T10:07:38+08:00">
+                2019-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaScript-语言基础部分"><a href="#JavaScript-语言基础部分" class="headerlink" title="JavaScript 语言基础部分"></a>JavaScript 语言基础部分</h1><h2 id="1-数组部分"><a href="#1-数组部分" class="headerlink" title="1. 数组部分"></a>1. 数组部分</h2><h3 id="1-1-去重"><a href="#1-1-去重" class="headerlink" title="1.1 去重"></a>1.1 去重</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="string">'2'</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. ES6 Set</span></span><br><span class="line"><span class="keyword">const</span> set=[...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"><span class="built_in">console</span>.log(set);    <span class="comment">// [ 1, 2,'2', 3, 4, 5 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.for循环</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> _result = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!_result.includes(arr[i])) &#123;   <span class="comment">// includes 为 === 比较</span></span><br><span class="line">      _result.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> _result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(uniq(arr)); <span class="comment">// [ 1, 2,'2', 3, 4, 5 ]</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-冒泡排序"><a href="#1-2-冒泡排序" class="headerlink" title="1.2 冒泡排序"></a>1.2 冒泡排序</h3><ul>
+<li>5个球进行排序，需要比较4轮，共比较次数 4+3+2+1=10次。</li>
+<li>比较此时公式：</li>
+</ul>
+<p>$$<br>\sum_{i=1} ^{i=n-1} i<br>$$</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. bubbleSort不是纯函数，会直接改变引用类型的arr</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = arr[j];</span><br><span class="line">        arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">        arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">12</span>, <span class="number">321</span>, <span class="number">32</span>, <span class="number">43</span>, <span class="number">455</span>, <span class="number">54</span>, <span class="number">5</span>, <span class="number">2</span>];</span><br><span class="line">bubbleSort(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [ 2, 5, 12, 32, 43, 54, 321, 455 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 纯函数，不会改变原有数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> _arr = [...arr]; <span class="comment">// 浅克隆</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; _arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; _arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (_arr[j] &gt; _arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = _arr[j];</span><br><span class="line">        _arr[j] = _arr[j + <span class="number">1</span>];</span><br><span class="line">        _arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> _arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">12</span>, <span class="number">321</span>, <span class="number">32</span>, <span class="number">43</span>, <span class="number">455</span>, <span class="number">54</span>, <span class="number">5</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> result=bubbleSort(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[ 12, 321, 32, 43, 455, 54, 5, 2 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [ 2, 5, 12, 32, 43, 54, 321, 455 ]</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-快速排序（二分法排序）"><a href="#1-3-快速排序（二分法排序）" class="headerlink" title="1.3 快速排序（二分法排序）"></a>1.3 快速排序（二分法排序）</h3><ul>
+<li>选取一个标杆值。用这个值去和数组中其他的值去依次比较大小。比他的的放在bigger数组，小的放在smaller数组，然后拼接数组。依次递归。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//停止递归</span></span><br><span class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//标杆</span></span><br><span class="line">  <span class="keyword">let</span> p = arr[<span class="number">0</span>];</span><br><span class="line">  <span class="comment">//存放比标杆大的值</span></span><br><span class="line">  <span class="keyword">let</span> bigger = [];</span><br><span class="line">  <span class="comment">//存放比标杆小的值</span></span><br><span class="line">  <span class="keyword">let</span> smaller = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] &gt;= p) &#123;</span><br><span class="line">      bigger.push(arr[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      smaller.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//递归调用</span></span><br><span class="line">  <span class="keyword">return</span> [...quickSort(smaller), p, ...quickSort(bigger)];</span><br><span class="line">  <span class="comment">// return quickSort(smaller).concat(p,quickSort(bigger))</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">123</span>, <span class="number">2342</span>, <span class="number">43</span>, <span class="number">4354</span>, <span class="number">54</span>, <span class="number">656</span>, <span class="number">76</span>];</span><br><span class="line"><span class="keyword">const</span> result = quickSort(arr);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// [ 43, 54, 76, 123, 656, 2342, 4354 ]</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-4-数组扁平化"><a href="#1-4-数组扁平化" class="headerlink" title="1.4 数组扁平化"></a>1.4 数组扁平化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>, <span class="string">"1"</span>, [<span class="number">1</span>, <span class="number">2</span>], [<span class="string">"a"</span>, <span class="string">"b"</span>], [[[<span class="string">"xxx"</span>], <span class="number">3</span>, <span class="number">5</span>]]];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flattenArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line">  <span class="comment">//每一项进行遍历，看是不是常数还是数组，如果是数组，则递归调用</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="comment">//注意检查数组方法。不能为 typeof</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr[i])) &#123;</span><br><span class="line">      result = [...result, ...flattenArray(arr[i])];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      result.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(flattenArray(arr));</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-拓展功能"><a href="#1-5-拓展功能" class="headerlink" title="1.5 拓展功能"></a>1.5 拓展功能</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//求数组的最大值</span></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr)</span><br><span class="line"></span><br><span class="line"><span class="comment">// prototype</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.max=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].max()</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-函数"><a href="#2-函数" class="headerlink" title="2.函数"></a>2.函数</h2><h3 id="2-1-函数科里（curry）化"><a href="#2-1-函数科里（curry）化" class="headerlink" title="2.1 函数科里（curry）化"></a>2.1 函数科里（curry）化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//备份实参</span></span><br><span class="line">    <span class="keyword">let</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> fn(...args, ...arguments);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a, b, c, d</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把fun函数curry化</span></span><br><span class="line">fun = curry(fun);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fn = fun(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(fun()); <span class="comment">// [Function]</span></span><br><span class="line"><span class="built_in">console</span>.log(fn(<span class="number">3</span>, <span class="number">4</span>)); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-深浅克隆"><a href="#3-深浅克隆" class="headerlink" title="3. 深浅克隆"></a>3. 深浅克隆</h2><ul>
+<li>浅克隆 ： 表层克隆一层，如果数组的某一项是数组，这个内层数组还是内存中的同一个数组。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]];</span><br><span class="line"><span class="keyword">let</span> _arr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  _arr.push(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr === _arr); <span class="comment">// false ，克隆成功</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>] === _arr[<span class="number">0</span>]); <span class="comment">// true ，第一层，直接复制值</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">3</span>] === _arr[<span class="number">3</span>]); <span class="comment">// true,第二层直接复制指针，不是复制值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>深克隆</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// todo 如何区分正则表达式？</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>], <span class="literal">null</span>, <span class="literal">undefined</span>, /^k[<span class="number">0</span><span class="number">-9</span>]/g, &#123; <span class="attr">name</span>: <span class="string">"kai"</span> &#125;];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">"object"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(obj)) &#123;</span><br><span class="line">    <span class="keyword">let</span> _arr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; obj.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (obj[i] === <span class="literal">null</span>) &#123;</span><br><span class="line">        _arr.push(<span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      _arr.push(deepClone(obj[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _arr;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">"object"</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> _object = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">      _object[key] = obj[key];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _object;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> clone_obj = deepClone(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr);        <span class="comment">// [ 1, "2", 3, [5, 6, 7], null, undefined, /^k[0-9]/g, &#123; name: "kai" &#125;]</span></span><br><span class="line"><span class="built_in">console</span>.log(clone_obj);  <span class="comment">// [ 1, '2', 3, [ 5, 6, 7 ], null, undefined, &#123;&#125;, &#123; name: 'kai' &#125; ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr === clone_obj); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">3</span>] === clone_obj[<span class="number">3</span>]); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h5 id="1-使用递归的6种情况："><a href="#1-使用递归的6种情况：" class="headerlink" title="1. 使用递归的6种情况："></a>1. 使用递归的6种情况：</h5><ol>
+<li>阶乘</li>
+<li>数组扁平化</li>
+<li>深克隆</li>
+<li>快速排序</li>
+<li>杨辉三角、各种三角</li>
+<li>脑筋急转弯，eg:不使用for、while循环输出 1-100</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wx.jpg" alt="Kaiwen0425 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>��ӭ��ɨһɨ�����΢�Ź��ںŹ�ע�ҡ�</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/13/react之框架（dva&&mirror）/" rel="next" title="react之框架（dva&&mirror）">
+                <i class="fa fa-chevron-left"></i> react之框架（dva&&mirror）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg"
+                alt="Kaiwen0425" />
+            
+              <p class="site-author-name" itemprop="name">Kaiwen0425</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kaiweno425" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaiwen0425@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kaiwen0425/activities" target="_blank" title="֪��">
+                      
+                        <i class="fa fa-fw fa-globe"></i>֪��</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5075683550?refer_flag=1001030101_&is_hot=1" target="_blank" title="΢��">
+                      
+                        <i class="fa fa-fw fa-globe"></i>΢��</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-语言基础部分"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 语言基础部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组部分"><span class="nav-number">1.1.</span> <span class="nav-text">1. 数组部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-去重"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 去重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-冒泡排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-快速排序（二分法排序）"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 快速排序（二分法排序）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-数组扁平化"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 数组扁平化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-拓展功能"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 拓展功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-函数"><span class="nav-number">1.2.</span> <span class="nav-text">2.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-函数科里（curry）化"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 函数科里（curry）化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-深浅克隆"><span class="nav-number">1.3.</span> <span class="nav-text">3. 深浅克隆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#附录"><span class="nav-number">1.3.1.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-使用递归的6种情况："><span class="nav-number">1.3.1.0.1.</span> <span class="nav-text">1. 使用递归的6种情况：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaiwen0425</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
