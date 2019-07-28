@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,6 +45,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -68,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, kaiwen" />
 
 
 
@@ -93,7 +119,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -101,7 +127,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: 'kaiwen0425'
     },
     algolia: {
       applicationID: '',
@@ -187,12 +213,42 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
           </a>
         </li>
       
@@ -234,7 +290,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -322,69 +378,22 @@
       
         
           
-            <ol>
-<li><p>上面一章说到了 redux。但是。老实说、配置太麻烦繁琐。所以这段时间研究了下蚂蚁金服的两个 redux 框架，在此总结下做个笔记。</p>
-</li>
-<li><p>至于 redux 是什么，干什么用就不赘述了。这里只是简单说下使用这两个框架的感受，不强调 API 和代码编写，具体参考官方的文档即可：</p>
-<ul>
-<li><a href="https://github.com/mirrorjs/mirror/blob/master/docs/zh/api.md" target="_blank" rel="noopener">mirror</a></li>
-<li><a href="https://dvajs.com/api/" target="_blank" rel="noopener">dva</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="1-使用体会："><a href="#1-使用体会：" class="headerlink" title="1.使用体会："></a>1.使用体会：</h2><h3 id="1-dva-使用起来更像一个框架，有自己的-模块、路由相关配置，文件结构相对-mirror-严格一些。而-mirror-更像一个库。"><a href="#1-dva-使用起来更像一个框架，有自己的-模块、路由相关配置，文件结构相对-mirror-严格一些。而-mirror-更像一个库。" class="headerlink" title="1. dva 使用起来更像一个框架，有自己的 模块、路由相关配置，文件结构相对 mirror 严格一些。而 mirror 更像一个库。"></a>1. dva 使用起来更像一个框架，有自己的 模块、路由相关配置，文件结构相对 mirror 严格一些。而 mirror 更像一个库。</h3><ol>
-<li>这点从使用方法就可以看出来：</li>
-</ol>
-<ul>
-<li>mirror：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用 create-react-app 创建一个新的 app：</span><br><span class="line"></span><br><span class="line">npm i -g create-react-app</span><br><span class="line">$ create-react-app my-app</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建之后，从 npm 安装 Mirror：</span></span><br><span class="line">$ <span class="built_in">cd</span> my-app</span><br><span class="line">$ npm i --save mirrorx</span><br><span class="line">$ npm start</span><br></pre></td></tr></table></figure>
-<ul>
-<li>dva :</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装 dva-cli</span></span><br><span class="line"><span class="comment">#通过 npm 安装 dva-cli 并确保版本是 0.9.1 或以上#</span></span><br><span class="line">$ npm install dva-cli -g</span><br><span class="line">$ dva -v</span><br><span class="line">dva-cli version 0.9.1</span><br><span class="line"><span class="comment">#创建新应用</span></span><br><span class="line"><span class="comment">#安装完 dva-cli 之后，就可以在命令行里访问到 dva 命令（不能访问？）。现在，你可以通过 dva new 创建新应用。</span></span><br><span class="line"></span><br><span class="line">$ dva new dva-quickstart</span><br><span class="line"><span class="comment">#这会创建 dva-quickstart 目录，包含项目初始化目录和文件，并提供开发服务器、构建脚本、数据 mock 服务、代理服务器等功能。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#然后我们 cd 进入 dva-quickstart 目录，并启动开发服务器：</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> dva-quickstart</span><br><span class="line">$ npm start</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>初始项目结构：</li>
-</ol>
-<ul>
-<li>由于 mirror 是在 create-react-app 脚手架工具上 import 使用，所以他的目录结构比较灵活。</li>
-<li>dva 更接近于框架，所以，目录结构和 react-react-app 区别较大。刚上手需要简单熟悉下：</li>
-</ul>
-<p>— dva 初始项目结构：—</p>
-<p><img src="https://s2.ax1x.com/2019/01/13/FvrR1K.png" alt=""></p>
-<ul>
-<li>mock 存放用于 mock 数据的文件；</li>
-<li>public 一般用于存放静态文件，打包时会被直接复制到输出目录(./dist)；</li>
-<li>src 文件夹用于存放项目源代码；<ul>
-<li>asserts 用于存放静态资源，打包时会经过 webpack 处理；</li>
-<li>components 用于存放 React 组件，一般是该项目公用的无状态组件；</li>
-<li>models 用于存放模型文件</li>
-<li>routes 用于存放需要 connect model 的路由组件；可以在此文件夹中编写“页面”</li>
-<li>services 用于存放服务文件，一般是网络请求等；</li>
-<li>utils 工具类库</li>
-</ul>
-</li>
-<li>router.js 路由文件</li>
-<li>index.js 项目的入口文件</li>
-<li>index.css 一般是共用的样式</li>
-<li>.editorconfig 编辑器配置文件</li>
-<li>.eslintrc ESLint 配置文件</li>
-<li>.gitignore Git 忽略文件</li>
-<li>.roadhogrc.mock.js Mock 配置文件</li>
-<li>.webpackrc 自定义的 webpack 配置文件，JSON 格式，如果需要 JS 格式，可修改为 - .webpackrc.js</li>
-</ul>
-<h2 id="2-相关知识："><a href="#2-相关知识：" class="headerlink" title="2. 相关知识："></a>2. 相关知识：</h2><ol>
-<li>高阶组件：<blockquote>
-<p>如果一个函数操作其他函数，即将其他函数作为参数或将函数作为返回值，将其称为高阶函数。高阶组件(high-order component)类似于高阶函数，接收 React 组件作为输入，输出一个新的 React 组件。高阶组件让代码更具有复用性、逻辑性与抽象特征。可以对 render 方法作劫持，也可以控制 props 与 state。</p>
-</blockquote>
-</li>
-</ol>
-<p>首先，高阶组件不是组件。而是函数！ 简单地说，高阶组件就是一个函数接收参数是一个组件，然后返回一个加工修饰后的组件。典型的高阶组件：redux 中的 connect：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(<span class="function"><span class="params">state</span> =&gt;</span> (&#123; state &#125;))(IndexPage);</span><br></pre></td></tr></table></figure>
-<p>== 传入 IndexPage 组件，给上面绑定 state 数据后返回==</p>
-<p>(未完待续)</p>
-
           
+上面一章说到了 redux。但是。老实说、配置太麻烦繁琐。所以这段时间研究了下蚂蚁金服的两个 redux 框架，在此总结下做个笔记。
+
+至于 redux 是什么，干什么用就不赘述了。这里只是简单说下使用这两个框架的感受，不强调 API 和代码编写，具体参考官方的文档即可：
+
+mirror
+dva
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/13/react之框架（dva&&mirror）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -436,7 +445,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -524,16 +533,21 @@
       
         
           
-            <p>上面一章说到了redux。这一节总结一下redux在react中的使用。即：react——redux</p>
-<h2 id="React-redux"><a href="#React-redux" class="headerlink" title="React-redux"></a>React-redux</h2><p>Redux 官方提供的 React 绑定库。 具有高效且灵活的特性。</p>
-<ul>
-<li>通俗理解：    请参考 <a href="https://www.cnblogs.com/bax-life/p/8440326.html" target="_blank" rel="noopener">redux和react-redux小记</a> 非常浅显明白，给赞！！！</li>
-</ul>
-<p>1.安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-redux</span><br></pre></td></tr></table></figure>
-<p>2.使用疑问</p>
+          上面一章说到了redux。这一节总结一下redux在react中的使用。即：react——redux
+React-reduxRedux 官方提供的 React 绑定库。 具有高效且灵活的特性。
 
-          
+通俗理解：    请参考 redux和react-redux小记 非常浅显明白，给赞！！！
+
+1.安装
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/29/redux(二)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -585,7 +599,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -673,80 +687,19 @@
       
         
           
-            <blockquote>
-<p>如果要用一句话来概括Redux，那么可以使用官网的这句话：Redux是针对JavaScript应用的可预测状态容器。此句话虽然简单，但包含了以下几个含义：</p>
-</blockquote>
-<ul>
-<li>可预测性(predictable): 因为Redux用了reducer与纯函数(pure function)的概念，每个新的state都会由旧的state建来一个全新的state。因而所有的状态修改都是”可预测的”。</li>
-<li>状态容器(state container): state是集中在单一个对象树状结构下的单一store，store即是应用程序领域(app domain)的状态集合。</li>
-<li>JavaScript应用: 这说明Redux并不是单指设计给React用的，它是独立的一个函数库，可通用于各种JavaScript应用。</li>
-</ul>
-<blockquote>
-<p>Redux基于简化版本的Flux框架，Flux是Facebook开发的一个框架。在标准的MVC框架中，数据可以在UI组件和存储之间双向流动，而Redux严格限制了 <strong><em>数据只能在一个方向上流动</em></strong>。</p>
-</blockquote>
-<p><a href="https://imgchr.com/i/PTGuW9" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/08/22/PTGuW9.md.png" alt="PTGuW9.md.png"></a></p>
-<p>为了说明整个模型的运作流程，首先我们需要弄清Redux模型中的几个组成对象：action 、reducer、store。</p>
-<ul>
-<li>action：官方的解释是action是把数据从应用传到 store 的有效载荷，它是 store 数据的唯一来源；要通过本地或远程组件更改状态，需要分发一个action；</li>
-<li>reducer：action发出了做某件事的请求，只是描述了要做某件事，并没有去改变state来更新界面，reducer就是根据action的type来处理不同的事件；</li>
-<li>store：store就是把action和reducer联系到一起的对象，store本质上是一个状态树，保存了所有对象的状态。任何UI组件都可以直接从store访问特定对象的状态。</li>
-</ul>
-<p>在Redux中，所有的数据（比如state）被保存在一个被称为store的容器中 ，在一个应用程序中只能有一个store对象。当一个store接收到一个action，它将把这个action代理给相关的reducer。reducer是一个纯函数，它可以查看之前的状态，执行一个action并且返回一个新的状态。</p>
-<h2 id="Redux配置"><a href="#Redux配置" class="headerlink" title="Redux配置"></a>Redux配置</h2><p>配置Redux开发环境的最快方法是使用create-react-app工具。在开始之前，确保已经安装并更新了nodejs、npm和yarn。下面以生成一个redux-shopping项目并安装Redux为例。</p>
-<p>如果没有安装create-react-app工具，请使用下面的命令先执行安装操作。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
-<p>然后，在使用下面的命令创建redux-shopping项目。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create-react-app redux-shopping</span><br><span class="line"><span class="built_in">cd</span> redux-shopping</span><br><span class="line">yarn add redux</span><br></pre></td></tr></table></figure>
-<p>首先，删除src文件夹中除index.js以外的所有文件。打开index.js，删除所有代码，键入以下内容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="keyword">function</span>(<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br></pre></td></tr></table></figure>
-<p>上面代码的意思是：</p>
-<ol>
-<li>从redux包中引入createStore()方法；</li>
-<li>创建了一个名为reducer的方法，第一个参数state是当前保存在store中的数据，第二个参数action是一个容器，用于： <ul>
-<li>type - 一个简单的字符串常量，例如ADD, UPDATE, DELETE等。 </li>
-<li>payload - 用于更新状态的数据。</li>
-</ul>
-</li>
-<li>创建一个Redux存储区，它只能使用reducer作为参数来构造。存储在Redux存储区中的数据可以被直接访问，但只能通过提供的reducer进行更新。</li>
-</ol>
-<p>目前，state为undefined或null，要解决这个问题，需要分配一个默认的值给state，使其成为一个空数组。例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="keyword">function</span>(<span class="params">state=[], action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>目前我们创建的reducer是通用的，那么我们如何使用多个reducer呢？此时我们可以使用Redux包中提供的combineReducers函数。做如下内容修改：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> productsReducer = <span class="function"><span class="keyword">function</span>(<span class="params">state=[], action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cartReducer = <span class="function"><span class="keyword">function</span>(<span class="params">state=[], action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> allReducers = &#123;</span><br><span class="line">  products: productsReducer,</span><br><span class="line">  shoppingCart: cartReducer</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rootReducer = combineReducers(allReducers);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(rootReducer);</span><br></pre></td></tr></table></figure>
-<p>接下来，我们将为reducer定义一些测试数据。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/index.js</span></span><br><span class="line"></span><br><span class="line">…</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  cart: [</span><br><span class="line">    &#123;</span><br><span class="line">      product: <span class="string">'bread 700g'</span>,</span><br><span class="line">      quantity: <span class="number">2</span>,</span><br><span class="line">      unitCost: <span class="number">90</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      product: <span class="string">'milk 500ml'</span>,</span><br><span class="line">      quantity: <span class="number">1</span>,</span><br><span class="line">      unitCost: <span class="number">47</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cartReducer = <span class="function"><span class="keyword">function</span>(<span class="params">state=initialState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">…</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(rootReducer);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"initial state: "</span>, store.getState());</span><br></pre></td></tr></table></figure>
-<p>接下来，我们可以在终端中执行npm start或者yarn start来运行dev服务器，并在控制台中查看state。 </p>
-<p><img src="https://s1.ax1x.com/2018/08/22/PTtSiD.jpg" alt="PTtSiD.jpg"></p>
-<p>现在，我们的cartReducer什么也没做，但它应该在Redux的存储区中管理购物车商品的状态。我们需要定义添加、更新和删除商品的操作(action)。此时我们可以做如下的一些定义：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/index.js</span></span><br><span class="line"></span><br><span class="line">…</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ADD_TO_CART = <span class="string">'ADD_TO_CART'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cartReducer = <span class="function"><span class="keyword">function</span>(<span class="params">state=initialState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> ADD_TO_CART: &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        cart: [...state.cart, action.payload]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
-<p>我们继续来分析一下代码。一个reducer需要处理不同的action类型，因此我们需要一个SWITCH语句。当一个ADD_TO_CART类型的action在应用程序中分发时，switch中的代码将处理它。</p>
-<p>接下来，我们将定义一个action，作为store.dispatch()的一个参数。action是一个Javascript对象，有一个必须的type和可选的payload。我们在cartReducer函数后定义一个：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">…</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addToCart</span>(<span class="params">product, quantity, unitCost</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: ADD_TO_CART,</span><br><span class="line">    payload: &#123; product, quantity, unitCost &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">…</span><br></pre></td></tr></table></figure>
-<p>在这里，我们定义了一个函数，返回一个JavaScript对象。在我们分发消息之前，我们添加一些代码，让我们能够监听store事件的更改。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">…</span><br><span class="line"><span class="keyword">let</span> unsubscribe = store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">  <span class="built_in">console</span>.log(store.getState())</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">unsubscribe();</span><br></pre></td></tr></table></figure>
-<p>接下来，我们通过分发消息到store来向购物车中添加商品。将下面的代码添加在unsubscribe()之前：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">store.dispatch(addToCart(<span class="string">'Coffee 500gm'</span>, <span class="number">1</span>, <span class="number">250</span>));</span><br><span class="line">store.dispatch(addToCart(<span class="string">'Flour 1kg'</span>, <span class="number">2</span>, <span class="number">110</span>));</span><br><span class="line">store.dispatch(addToCart(<span class="string">'Juice 2L'</span>, <span class="number">1</span>, <span class="number">250</span>));</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2018/08/22/PTtBO1.png" alt="PTtBO1.png"></p>
-<p>到此，我们已经走通了redux的简易流程。不过代码有点乱。维护成本太高。所以我们需要拆分代码。</p>
-<h2 id="代码拆分"><a href="#代码拆分" class="headerlink" title="代码拆分"></a>代码拆分</h2><p>会发现，index.js中的代码逐渐变得冗杂。所以，接下来我们对上面的项目进行一个组织拆分，使之成为Redux项目。首先，在src文件夹中创建一下文件和文件夹，文件结构如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">├── actions</span><br><span class="line">│ └── cart-actions.js</span><br><span class="line">├── index.js</span><br><span class="line">├── reducers</span><br><span class="line">│ ├── cart-reducer.js</span><br><span class="line">│ ├── index.js</span><br><span class="line">│ └── products-reducer.js</span><br><span class="line">└── store.js</span><br></pre></td></tr></table></figure>
-<p>然后，我们把index.js中的代码进行整理：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/actions/cart-actions.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TO_CART = <span class="string">'ADD_TO_CART'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addToCart</span>(<span class="params">product, quantity, unitCost</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: ADD_TO_CART,</span><br><span class="line">    payload: &#123; product, quantity, unitCost &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/reducers/cart-reducer.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>  &#123; ADD_TO_CART &#125;  <span class="keyword">from</span> <span class="string">'../actions/cart-actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialState = &#123;</span><br><span class="line">  cart: [</span><br><span class="line">    &#123;</span><br><span class="line">      product: <span class="string">'bread 700g'</span>,</span><br><span class="line">      quantity: <span class="number">2</span>,</span><br><span class="line">      unitCost: <span class="number">90</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      product: <span class="string">'milk 500ml'</span>,</span><br><span class="line">      quantity: <span class="number">1</span>,</span><br><span class="line">      unitCost: <span class="number">47</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">state=initialState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> ADD_TO_CART: &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        cart: [...state.cart, action.payload]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/reducers/index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> productsReducer <span class="keyword">from</span> <span class="string">'./products-reducer'</span>;</span><br><span class="line"><span class="keyword">import</span> cartReducer <span class="keyword">from</span> <span class="string">'./cart-reducer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> allReducers = &#123;</span><br><span class="line">  products: productsReducer,</span><br><span class="line">  shoppingCart: cartReducer</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rootReducer = combineReducers(allReducers);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/store.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(rootReducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store.js'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; addToCart &#125;  <span class="keyword">from</span> <span class="string">'./actions/cart-actions'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"initial state: "</span>, store.getState());</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> unsubscribe = store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">  <span class="built_in">console</span>.log(store.getState())</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">store.dispatch(addToCart(<span class="string">'Coffee 500gm'</span>, <span class="number">1</span>, <span class="number">250</span>));</span><br><span class="line">store.dispatch(addToCart(<span class="string">'Flour 1kg'</span>, <span class="number">2</span>, <span class="number">110</span>));</span><br><span class="line">store.dispatch(addToCart(<span class="string">'Juice 2L'</span>, <span class="number">1</span>, <span class="number">250</span>));</span><br><span class="line"></span><br><span class="line">unsubscribe();</span><br></pre></td></tr></table></figure>
-<p>整理完代码之后，程序依然会正常运行.现在我们来添加修改和删除购物车中商品的逻辑。修改cart-actions.js和cart-reducer.js文件：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/reducers/cart-actions.js</span></span><br><span class="line">…</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UPDATE_CART = <span class="string">'UPDATE_CART'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> DELETE_FROM_CART = <span class="string">'DELETE_FROM_CART'</span>;</span><br><span class="line">…</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">updateCart</span>(<span class="params">product, quantity, unitCost</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: UPDATE_CART,</span><br><span class="line">    payload: &#123;</span><br><span class="line">      product,</span><br><span class="line">      quantity,</span><br><span class="line">      unitCost</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">deleteFromCart</span>(<span class="params">product</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: DELETE_FROM_CART,</span><br><span class="line">    payload: &#123;</span><br><span class="line">      product</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/reducers/cart-reducer.js</span></span><br><span class="line">…</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">state=initialState, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> ADD_TO_CART: &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        cart: [...state.cart, action.payload]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> UPDATE_CART: &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        cart: state.cart.map(<span class="function"><span class="params">item</span> =&gt;</span> item.product === action.payload.product ? action.payload : item)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> DELETE_FROM_CART: &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        ...state,</span><br><span class="line">        cart: state.cart.filter(<span class="function"><span class="params">item</span> =&gt;</span> item.product !== action.payload.product)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后，我们在index.js中分发这两个action：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Update Cart</span></span><br><span class="line">store.dispatch(updateCart(<span class="string">'Flour 1kg'</span>, <span class="number">5</span>, <span class="number">110</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Delete from Cart</span></span><br><span class="line">store.dispatch(deleteFromCart(<span class="string">'Coffee 500gm'</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="使用Redux工具进行调试"><a href="#使用Redux工具进行调试" class="headerlink" title="使用Redux工具进行调试"></a>使用Redux工具进行调试</h2><p>Redux拥有很多第三方的调试工具，可用于分析代码和修复bug。最受欢迎的是time-travelling tool，即redux-devtools-extension。设置它只需要三个步骤。</p>
-<p>首先，在Chrome中安装Redux Devtools扩展；<br>然后，在运行Redux应用程序的终端里使用Ctrl+C停止服务器。并用npm或yarn安装redux-devtools-extension包；</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add redux-devtools-extension</span><br></pre></td></tr></table></figure>
-<p>一旦安装完成，我们对store.js稍作修改都会反映到结果上。例如，我们还可以把src/index.js中日志相关的代码删除掉。返回Chrome，右键单击该工具的图标，打开Redux DevTools面板。 </p>
-
           
+如果要用一句话来概括Redux，那么可以使用官网的这句话：Redux是针对JavaScript应用的可预测状态容器。此句话虽然简单，但包含了以下几个含义：
+
+
+可预测性(predictable): 因为Redux用了reducer与纯函数(pure function)的概念，每个新的state都会
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/22/redux(一)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -798,7 +751,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -886,157 +839,17 @@
       
         
           
-            <p>最近工作中总是与linux、git打交道，不可避免的要使用vim文本编辑器。在此，将一些常见的操作整理出来。做个总结。同时，通过网上查找再加强学习。</p>
-<h2 id="什么是vi？"><a href="#什么是vi？" class="headerlink" title="什么是vi？"></a>什么是vi？</h2><blockquote>
-<p>vi(vim)可以说是linux中用得最多的工具了，不管你配置服务也好，写脚本也好，总会用到它。但是，vim作为一个“纯字符”模式下的工具，它的操作和WINDOWS中的文本编辑工具相比多少有些复杂。</p>
-</blockquote>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>基本上vi可分为三种操作状态，分别是命令模式（Command mode）、插入模式（Insert mode）和底线命令模式（Last line mode），各模式的功能区分如下：</p>
-<ol>
-<li><p>Comand mode：控制屏幕光标的移动，字符或光标的删除，移动复制某区段及进入Insert mode下，或者到Last line mode。</p>
-</li>
-<li><p>Insert mode：唯有在Insert mode下，才可做文字数据输入，按Esc等可回到Comand mode。</p>
-</li>
-<li><p>Last line mode：将储存文件或离开编辑器，也可设置编辑环境，如寻找字符串、列出行号等。</p>
-</li>
-</ol>
-<p><strong><em>不过可以把vi简化成两个模式，即是将Last line mode也算入Command mode,把vi分成Command 和Insert mode。</em></strong></p>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ul>
-<li><p>进入vi编辑模式：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi text.sh  <span class="comment">#在系统提示符号输入vi及文件名称后，即可进入vi全屏幕编辑画面</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑文件</p>
-<p>  <strong><em>进入vi之后是处于“Command mode”下，您要切换到Insert mode才能输入文字。</em></strong></p>
-<blockquote>
-<p>在Command mode下按‘i’、‘a’或‘o’三键就可进入Insert mode。这时候您就可以开始输入文字了。</p>
-</blockquote>
-<ul>
-<li><p>i : 插入，从目前光标所在之处插入所输入的文字。</p>
-</li>
-<li><p>a : 增加，目前光标所在的下一个字开始输入文字。</p>
-</li>
-<li><p>o : 插入新的一行，从行首开始输入文字。</p>
-</li>
-</ul>
-</li>
-<li><p>Insert的切换→Command mode，按Esc键(退出编辑状态)：</p>
-<pre><code>您目前处于Insert mode，您就只能一直打字。假如您发现打错字了，想用光标键往回移动，将该字删除，就要按ESC键转换回Command mode，再删除文字。
-</code></pre></li>
-<li><p>多行注释/反注释</p>
-<p>  1.多行注释：</p>
-<ul>
-<li>Ctrl+v           进入块级编辑模式</li>
-<li>操作光标上下      选取被注释区域</li>
-<li>输入I {大写的i}   进入多行插入修改模式</li>
-<li>输入#             输入要插入的字符</li>
-<li><p>按ESC            退出多行插入模式</p>
-<p>2.取消注释</p>
-</li>
-<li>Ctrl+v           进入块级编辑模式</li>
-<li>操作光标上下      选取被注释区域</li>
-<li>按d删除第一列#号</li>
-<li>按ESC            退出多行插入模式</li>
-</ul>
-</li>
-<li><p>离开vi及存文件<br>在Command mode下，可按冒号“：”键入入Last line mode，例如：</p>
-<ul>
-<li><p>:w filename (输入“w filename”，将文章存入指定的文件名filename)</p>
-</li>
-<li><p>:wq (输入“wq”，因为进入之时已经指定文件名testfile，所以会写入testfile并离开vi)</p>
-</li>
-<li><p>:q! (输入“q!”，强制离开并放弃编辑的文件)</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Command-mode功能键列表"><a href="#Command-mode功能键列表" class="headerlink" title="Command mode功能键列表"></a>Command mode功能键列表</h2><ol>
-<li><p>移动光标</p>
-<ul>
-<li>第一种方法：上下左右按键【好像白说了~~】</li>
-<li>第二种方法：vi标准按键：<blockquote>
-<p>h、j、k、l，分别控制光标左、下、上、右移一格。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>翻页</p>
-<ul>
-<li>按Ctrl+B：屏幕往后移动一页。[常用]</li>
-<li>按Ctrl+F：屏幕往前移动一页。[常用]</li>
-<li>按Ctrl+U：屏幕往后移动半页。</li>
-<li>按Ctrl+D：屏幕往前移动半页。</li>
-<li>按 0 （数字零）：移动文章的开头。[常用]</li>
-<li>按 G：移动到文章的最后。[常用]</li>
-<li>按 w：光标跳到下个word的开头。[常用]</li>
-<li>按 e：光标跳到下个word的字尾。</li>
-<li>按 b：光标回到上个word的开头。</li>
-<li>按 $：移到光标所在行的行尾。[常用]</li>
-<li>按 ^：移到该行第一个非空白的字符。</li>
-<li>按 0：移到该行的开头位置。[常用]</li>
-<li>按 #：移到该行的第#个位置，例：51、121。[常用]</li>
-</ul>
-</li>
-<li><p>删除文字</p>
-<ul>
-<li>x：每按一次删除光标所在位置的后面一个字符。[超常用]</li>
-<li>dd：删除光标所在行。[超常用]</li>
-<li>yy：复制光标所在行。[超常用]</li>
-<li>p：复制单行到您想粘贴之处。（指令‘yy’与‘p’必须搭配使用）</li>
-</ul>
-</li>
-<li><p>撤销操作</p>
-<ul>
-<li>u：假如您误操作一个指令，可以马上按u，回复到上一个操作。[超常用]</li>
-</ul>
-</li>
-<li><p>跳至指定行</p>
-<ul>
-<li>Ctrl+G：列出光标所在行的行号。例如，15G，表示移动光标至文章的第15行行首。[常用]</li>
-</ul>
-</li>
-</ol>
-<h2 id="Last-line-mode下指令简介"><a href="#Last-line-mode下指令简介" class="headerlink" title="Last line mode下指令简介"></a>Last line mode下指令简介</h2><p><strong><em>先按Esc键确定您已经处于Command mode下后，再按冒号“：”或“/”或“？”三键的其中一键进入Last line mode。</em></strong></p>
-<ol>
-<li>列出行号</li>
-</ol>
-<ul>
-<li>set nu: 输入“set nu”后，会在文章的每一行前面列出行号。</li>
-</ul>
-<ol start="2">
-<li>跳到文章的某一行</li>
-</ol>
-<ul>
-<li>#：井号代表一个数字，在Last line mode提示符号“：”前输入数字，再按Enter就会跳到该行了，如：15[Enter]就会跳到文章的第15行。[常用]</li>
-</ul>
-<ol start="3">
-<li>寻找字符串</li>
-</ol>
-<ul>
-<li>/关键字：先按/，再输入您想寻找的字，如果第一次找的关键字不是您相尽可能的，可以一直按n会往下寻找到您要的关键字为止。</li>
-<li>？关键字：先按？，再输入您想寻找的字，如果第一次找的关键字不是您想要的，可以按n会往前寻找到您要的关键字为止。</li>
-</ul>
-<ol start="4">
-<li>取代字符串</li>
-</ol>
-<ul>
-<li>1，$s/string/replae/g：在last line mode输入“ 1,$s/string/replace/g ”会将全文的string字符串取代为replace字符串，其中1,$s就是指搜寻区间为文章从头至尾的意思，g则是表示全部取代不必确认。</li>
-<li>%s/string/replace/c：同样会将全文的string字符串取代为replace字符串，和上面指令不同的地方是，%s和1,$s是相同的功能，c则是表示要替代之前必须再次确认是否取代。</li>
-<li>1,20s/string/replace/g：将1至20行间的string替代为relpace字符串。</li>
-</ul>
-<ol start="5">
-<li>存文件</li>
-</ol>
-<ul>
-<li>w：在last line mode提示符号“：”前按w即可将文件存起来。[超常用]</li>
-</ul>
-<ol start="6">
-<li>离开</li>
-</ol>
-<ul>
-<li>q：按q就离开，有时如果无法离开vi，可搭配“！：强置离开vi，如“q！”</li>
-<li>qw：一般建议离开时，搭配w一起使用，如此离开时还可存文件。[常用]</li>
-</ul>
-
-          
+          最近工作中总是与linux、git打交道，不可避免的要使用vim文本编辑器。在此，将一些常见的操作整理出来。做个总结。同时，通过网上查找再加强学习。
+什么是vi？
+vi(vim)可以说是linux中用得最多的工具了，不管你配置服务也好，写脚本也好，总会用到它。但是，vim作为一个“纯字符”模式下的工
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/21/vi操作指南/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1088,7 +901,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1176,71 +989,22 @@
       
         
           
-            <p><img src="https://s1.ax1x.com/2018/08/21/PITrjA.jpg" alt="PITrjA.jpg"></p>
-<p>小公司一般都会使用 svn 托管代码。工作原因，需要使用 git。没办法，硬着头皮上。第一次在超大的代码库中用 git 提交进去自己的两行字符串，还是挺兴奋的呢。【滑稽.jpg】</p>
-<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><ul>
-<li><p>安装：</p>
-<p>这个好像没什么说的，百度 git–&gt;傻瓜下一步安装【手动狗头.jpg】</p>
-</li>
-<li><p>配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"John Doe"</span></span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关联 github</p>
-<ol>
-<li>生成密钥对</li>
-</ol>
-<ul>
-<li>大多数 Git 服务器都会选择使用 SSH 公钥来进行授权。系统中的每个用户都必须提供一个公钥用于授权，没有的话就要生成一个。生成公钥的过程在所有操作系统上都差不多。首先你要确认一下本机是否已经有一个公钥。SSH 公钥默认储存在账户的主目录下的 ~/.ssh 目录。进去看看：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ls</span><br><span class="line">authorized_keys2  id_dsa  known_hosts config  id_dsa.pub</span><br></pre></td></tr></table></figure>
-<ul>
-<li>假如没有这些文件，甚至连 .ssh 目录都没有，可以用 ssh-keygen 来创建。该程序在 Linux/Mac 系统上由 SSH 包提供，而在 Windows 上则包含在 MSysGit 包里：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@youremail.com"</span></span><br><span class="line"></span><br><span class="line">Creates a new ssh key using the provided email <span class="comment"># Generating public/private rsa key pair.</span></span><br><span class="line"></span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/you/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-<p>直接按 Enter 就行。然后，会提示你输入密码，如下(建议输一个，安全一点，当然不输也行，应该不会有人闲的无聊冒充你去修改你的代码)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
-<p>完了之后，大概是这样：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Your public key has been saved <span class="keyword">in</span> /home/you/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is: <span class="comment"># 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@youremail.com</span></span><br></pre></td></tr></table></figure>
-<p>  2.添加公钥到你的远程仓库（github）</p>
-<p>  2.1、查看你生成的公钥：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0X6L1zLL4VHuvGb8aJH3ippTozmReSUzgntvk434aJ/v7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8vR3c8E7CjZN733f5AL8uEYJA+YZevY5UCvEg+umT7PHghKYaJwaCxV7sjYP7Z6V79OMCEAGDNXC26IBMdMgOluQjp6o6j2KAdtRBdCDS/QIU5THQDxJ9lBXjk1fiq9tITo/aXBvjZeD+gH/Apkh/0GbO8VQLiYYmNfqqAHHeXdltORn8N7C9lOa/UW3KM7QdXo6J0GFlBVQeTE/IGqhMS5PMln3 admin@admin-PC</span><br></pre></td></tr></table></figure>
-<p>  2.2、登陆你的github帐户。点击你的头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key</p>
-<p>  2.3、然后你复制上面的公钥内容，粘贴进“Key”文本域内。 title域，自己随便起个名字。</p>
-<p>  2.4、点击 Add key。</p>
-<p>  完成以后，验证下这个key是不是正常工作：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">Attempts to ssh to github</span><br><span class="line"></span><br><span class="line">Hi xxx! You<span class="string">'ve successfully authenticated, but GitHub does not # provide shell access.</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a>git 常用命令</h2><ul>
-<li>拉取代码</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@githome****    <span class="comment">#从远程仓库克隆代码【master分支】</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> -b xxx git@githome****    <span class="comment">#从远程仓库克隆代码【xxx分支】</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>修改代码</p>
-<p>进入代码文件夹后开发代码</p>
-</li>
-<li><p>检查工作区状态</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<ul>
-<li>检查分支</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch  <span class="comment">#查看目前所在分支</span></span><br><span class="line">git checkout dev  <span class="comment">#切换到dev分支</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>增加改动到缓存区</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add *   <span class="comment">#增加所有改动到缓存区</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>提交代码到本地仓库</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"提交描述信息"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>推送到远程服务器</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git  push    <span class="comment">#推送代码到master分支</span></span><br><span class="line">git  push origin -u xxx  <span class="comment">#推送代码到xxx分支</span></span><br></pre></td></tr></table></figure>
-
           
+小公司一般都会使用 svn 托管代码。工作原因，需要使用 git。没办法，硬着头皮上。第一次在超大的代码库中用 git 提交进去自己的两行字符串，还是挺兴奋的呢。【滑稽.jpg】
+安装配置
+安装：
+这个好像没什么说的，百度 git–&gt;傻瓜下一步安装【手动狗头.jpg】
+
+配置：
+12$ gi
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/20/git操作指南/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1292,7 +1056,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1380,94 +1144,22 @@
       
         
           
-            <blockquote>
-<p>本文主要是对linux下的shell编程相关知识做一下总结。</p>
-</blockquote>
-<h2 id="1-什么是SHELL？什么是SHELL脚本？"><a href="#1-什么是SHELL？什么是SHELL脚本？" class="headerlink" title="1.什么是SHELL？什么是SHELL脚本？"></a>1.什么是SHELL？什么是SHELL脚本？</h2><blockquote>
-<p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p>
-</blockquote>
-<blockquote>
-<p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
-</blockquote>
-<blockquote>
-<p>Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。由于习惯的原因，简洁起见，本文出现的 “shell编程” 都是指 shell 脚本编程，不是指开发 shell 自身。</p>
-</blockquote>
-<p><strong><em>简单来说，shell和shell脚本就是雷锋与雷峰塔的区别，听着都与雷锋有关而已。</em></strong></p>
-<h2 id="2-shell脚本"><a href="#2-shell脚本" class="headerlink" title="2.shell脚本"></a>2.shell脚本</h2><ul>
-<li>shell脚本就是将一些linux操作命令集成为“.sh”脚本</li>
-<li><p>shell脚本第一行一般如下：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>shell脚本运行的方法：</p>
-<p>  1.作为解释器参数</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash ./text.sh</span><br></pre></td></tr></table></figure>
-<p>  2.作为可执行程序</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./text.sh</span><br></pre></td></tr></table></figure>
-<p>  <strong><em>注意，一定要写成 ./test.sh，而不是 test.sh，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</em></strong></p>
-</li>
-</ul>
-<h2 id="3-shell编程注意事项："><a href="#3-shell编程注意事项：" class="headerlink" title="3.shell编程注意事项："></a>3.shell编程注意事项：</h2><h3 id="1-变量-amp-amp-字符串"><a href="#1-变量-amp-amp-字符串" class="headerlink" title="1. 变量&amp;&amp;字符串"></a>1. 变量&amp;&amp;字符串</h3><ul>
-<li>字符串变量定义时，单引号里面不能有其他变量拼接，会原样输出；在双引号里面可以包含其他变量引用后输出。</li>
-<li>定义变量时，变量名不加美元符号$,使用变量需要在前边加 <strong><em>$num</em></strong> 或者写成 <strong><em>${num}</em></strong>  。</li>
-<li><p>变量重新赋值不属于使用变量，不需要加$ 。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">your_name=<span class="string">"kw"</span>                  <span class="comment">#定义变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$your_name</span>                    <span class="comment">#使用变量</span></span><br><span class="line">your_name=<span class="string">"tiantian"</span>               <span class="comment">#重新赋值</span></span><br><span class="line"><span class="built_in">echo</span> your name is <span class="variable">$your_name</span> !     <span class="comment">#使用变量</span></span><br><span class="line"><span class="built_in">echo</span> your name is <span class="variable">$&#123;your_name&#125;</span> !   <span class="comment">#使用变量</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字符串拼接直接将变量“放置”在对于位置即可。</p>
-<blockquote>
-<p>变量相关其他知识可以参考 <a href="http://www.runoob.com/linux/linux-shell-variable.html" target="_blank" rel="noopener">菜鸟教程</a> 相关章节。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="2-参数传递"><a href="#2-参数传递" class="headerlink" title="2.参数传递"></a>2.参数传递</h3><p><strong><em>shell执行机制本身就比较”傻”，它会从上到下一条条命令执行。假如没有做容错处理，执行错误了，也不会停止，会继续执行下面的命令直到脚本底部</em></strong></p>
-<p>假如测试脚本 file.sh 如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Shell 传递参数实例！"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"执行的文件名：<span class="variable">$0</span>"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"第一个参数为：<span class="variable">$1</span>"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"第二个参数为：<span class="variable">$2</span>"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"第三个参数为：<span class="variable">$3</span>"</span>;</span><br></pre></td></tr></table></figure>
-<p>我们调用执行他：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x file.sh <span class="comment">#给文件file.sh添加自执行权限</span></span><br><span class="line">./file.sh 1 2 3  <span class="comment">#调用脚本并传入参数</span></span><br></pre></td></tr></table></figure>
-<p>执行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Shell 传递参数实例！</span><br><span class="line">执行的文件名：./file.sh</span><br><span class="line">第一个参数为：1</span><br><span class="line">第二个参数为：2</span><br><span class="line">第三个参数为：3</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>shell的脚本调用传参必须严格遵守传参顺序</p>
-</blockquote>
-<h2 id="4-shell数组"><a href="#4-shell数组" class="headerlink" title="4.shell数组"></a>4.shell数组</h2><p>1.定义方法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr=(A B <span class="string">"C"</span> D)</span><br></pre></td></tr></table></figure>
-<p>2.注意点：</p>
-<ul>
-<li>数组定义以 () 包裹。</li>
-<li>shell数组只支持一维数组。</li>
-<li>shell数组元素以空格分割</li>
-<li>数组元素获取方法和JScript相同。  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr1=arr[0]   <span class="comment">#获取数组第一个元素</span></span><br><span class="line">arrL=arr[@]   <span class="comment">#获取数组长度</span></span><br><span class="line">arrL=arr[*]   <span class="comment">#同上</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="5-流程控制"><a href="#5-流程控制" class="headerlink" title="5.流程控制"></a>5.流程控制</h2><p><strong><em>shell里面的流程控制语句，一定要注意关键词的之后空格和缩进</em></strong></p>
-<ol>
-<li>if</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    command1 </span><br><span class="line">    command2</span><br><span class="line">    ...</span><br><span class="line">    commandN </span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>if-else</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">num1=$[2*3]</span><br><span class="line">num2=$[1+5]</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> $[num1] -eq $[num2]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'两个数字相等!'</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'两个数字不相等!'</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>for</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> item1 item2 ... itemN</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    ...</span><br><span class="line">    commandN</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="6-函数"><a href="#6-函数" class="headerlink" title="6.函数"></a>6.函数</h2><p><strong><em>shell里面的函数定义与JScript一样,不过要注意缩进，调用时如果不需要传参，不跟()</em></strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">funWithReturn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"这个函数会对输入的两个数字进行相加运算..."</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"输入第一个数字: "</span></span><br><span class="line">    <span class="built_in">read</span> aNum</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"输入第二个数字: "</span></span><br><span class="line">    <span class="built_in">read</span> anotherNum</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"两个数字分别为 <span class="variable">$aNum</span> 和 <span class="variable">$anotherNum</span> !"</span></span><br><span class="line">    <span class="built_in">return</span> $((<span class="variable">$aNum</span>+<span class="variable">$anotherNum</span>))</span><br><span class="line">&#125;</span><br><span class="line">funWithReturn  <span class="comment">#函数调用</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"输入的两个数字之和为 $? !"</span></span><br></pre></td></tr></table></figure>
-<p>函数传参方法：</p>
-<p>类似脚本运行传参,参数获取从$1开始，代表第一个参数。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">funWithReturn</span></span>()&#123; </span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"第一个参数为：<span class="variable">$1</span>"</span>;</span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"第二个参数为：<span class="variable">$2</span>"</span>;</span><br><span class="line"> <span class="built_in">echo</span> <span class="string">"第三个参数为：<span class="variable">$3</span>"</span>;</span><br><span class="line">&#125;</span><br><span class="line">funWithReturn  a b c    <span class="comment">#函数传参调用</span></span><br><span class="line"></span><br><span class="line">================================</span><br><span class="line"></span><br><span class="line">第一个参数为：a</span><br><span class="line">第一个参数为：b</span><br><span class="line">第一个参数为：c</span><br></pre></td></tr></table></figure>
-<h2 id="7-Shell-输入-输出重定向"><a href="#7-Shell-输入-输出重定向" class="headerlink" title="7.Shell 输入/输出重定向"></a>7.Shell 输入/输出重定向</h2><blockquote>
-<p>大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情况下，这恰好是你的终端。同样，一个命令通常将其输出写入到标准输出，默认情况下，这也是你的终端。</p>
-</blockquote>
-<p>用的较多的几个：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> 1 &gt; file1.log   <span class="comment">#将运行结果输入到file1.log文件中。</span></span><br><span class="line"><span class="built_in">command</span> 2 &gt;&gt; file       <span class="comment">#将运行结果输入追加到file1.log文件中。不删除以前的。</span></span><br><span class="line"><span class="built_in">command</span> &gt; /dev/null     <span class="comment">#/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到"禁止输出"的效果。</span></span><br></pre></td></tr></table></figure>
-<h2 id="8-Shell-文件包含"><a href="#8-Shell-文件包含" class="headerlink" title="8.Shell 文件包含"></a>8.Shell 文件包含</h2><blockquote>
-<p>和其他语言一样，Shell 也可以包含外部脚本。这样可以很方便的封装一些公用的代码作为一个独立的文件。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. filename   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意点号(.)和文件名中间有一空格.可以理解为JScript里面的import后可以直接使用filename中的变量、方法等.</span></span><br></pre></td></tr></table></figure>
-<p>【未完待续】</p>
-
           
+本文主要是对linux下的shell编程相关知识做一下总结。
+
+1.什么是SHELL？什么是SHELL脚本？
+Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。
+
+
+Shell 是指一种应用程序，这个应用程序提供了一个界
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/19/LINUX-初体验（二）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1519,7 +1211,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1607,101 +1299,19 @@
       
         
           
-            <blockquote>
-<p>此文引用自：<a href="https://mp.weixin.qq.com/s/jxaFwejRpr5AeSZRJjptzA" target="_blank" rel="noopener">火头军人</a> ,仅为学习目的。</p>
-</blockquote>
-<p>在页面构建中，能明显提升页面显示质量的一些CSS小技巧。很多简洁美观的页面表现，可以使用CSS3代码即可实现，<strong>减少图片的使用</strong>。</p>
-<h2 id="一、边框内圆角"><a href="#一、边框内圆角" class="headerlink" title="一、边框内圆角"></a>一、边框内圆角</h2><p>我们在设计例如按钮等控件的时候，会遇到这样的设计：只有内侧有圆角，而边框或者描边的四个角还是保持直角的形状，用以下代码可以轻松的实现。</p>
-<p><img src="https://s1.ax1x.com/2018/08/12/Pc6Rjx.png" alt="content"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line"></span><br><span class="line">    #content &#123;</span><br><span class="line">        <span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line">        <span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br><span class="line">        <span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br><span class="line">        <span class="selector-tag">height</span>: 100%;</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">rgb</span>(85, 136, 187);</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span><br><span class="line">        <span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br><span class="line">        <span class="selector-tag">border-radius</span>: 20<span class="selector-tag">px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这种解决方案需要使用到两个 dom 元素，那么如果只使用一个 dom 元素，应该怎么实现？</p>
-<p>这里需要用到 CSS 的两个属性： box-shadow 和 outline 属性，具体属性参见MDN。</p>
-<blockquote>
-<p>box-shadow属性有以下5个特性</p>
-<ul>
-<li>inset   </li>
-<li>offset-x  offset-y</li>
-<li>blur-radius</li>
-<li>spread-radius</li>
-<li>color</li>
-</ul>
-</blockquote>
-<p>这里我们将使用第四个属性 spread-radius 来填充效果当中的空白。同时利用 outline 的特性：描边不跟随边框绘制的特点来实现（因为不清楚这是不是一个bug，所以在将来的版本中可能会改变），具体代码如下。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: 0 0 0 10<span class="selector-tag">px</span> <span class="selector-tag">rgb</span>(255, 187, 51);</span><br><span class="line"><span class="selector-tag">outline</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgb</span>(255, 187, 51);</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2018/08/12/Pc6IED.png" alt="content2"></p>
-<p>这种实现方式，对于边框的宽度和圆角的大小有一定的限制效果。仅当边框宽度 w 与圆角半径 r 存在 w ≥ (√2-1)r 关系时才可实现.</p>
-<h2 id="二、条纹背景"><a href="#二、条纹背景" class="headerlink" title="二、条纹背景"></a>二、条纹背景</h2><p>如何使用CSS来实现条纹？</p>
-<p><img src="https://s1.ax1x.com/2018/08/12/Pc6oUe.png" alt="content3"></p>
-<ol>
-<li>使用  linear-gradient 属性实现</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#stripe</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(rgb(255, 187, 51), <span class="built_in">rgb</span>(85, 136, 187));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2018/08/12/Pc6qgI.png" alt="content4"></p>
-<ol start="2">
-<li>尝试修改 linear-gradient 属性，当linear-gradient属性</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(rgb(255, 187, 51) 50%, rgb(85, 136, 187) 50%);</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2018/08/12/Pc6Lvt.png" alt="content5"></p>
-<ol start="3">
-<li>因为条纹是由 background-image 属性生成的，因此当然也可以使用 background-size 属性来改变它的大小</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-size</span>: 100% 40<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2018/08/12/PccCCj.png" alt="content6"></p>
-<p>如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(rgb(255, 187, 51) 60%, rgb(85, 136, 187) 0);</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://s1.ax1x.com/2018/08/12/PccGqK.png" alt="content7"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 33<span class="selector-class">.3</span>%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 66<span class="selector-class">.6</span>%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(170, 255, 0) 0</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h3 id="垂直条纹"><a href="#垂直条纹" class="headerlink" title="垂直条纹"></a>垂直条纹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(to right, rgb(255, 187, 51) 60%, rgb(85, 136, 187) 0);</span><br></pre></td></tr></table></figure>
-<p>默认值为 to bottom ，可以设置 to right; to left 等</p>
-<p><img src="https://s1.ax1x.com/2018/08/12/PccdGd.png" alt=""></p>
-<h3 id="斜条纹"><a href="#斜条纹" class="headerlink" title="斜条纹"></a>斜条纹</h3><p><img src="https://s1.ax1x.com/2018/08/12/PccwRA.png" alt=""></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(45<span class="selector-tag">deg</span>, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 25%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 50%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 0%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 75%, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0</span><br><span class="line">);</span><br><span class="line"><span class="selector-tag">background-size</span>: 30<span class="selector-tag">px</span> 30<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-<p>为了达到斜条纹等宽的视觉效果，需要运用到勾股定理来计算宽度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-size: 42px 42px;</span><br></pre></td></tr></table></figure></p>
-<p>介绍 linear-gradient 的升级版 ：  repeating-linear-gradient</p>
-<p>可以试着使用 linear-gradient 和 repeating-linear-gradient 实现同样的60°斜条纹进行对比</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(60<span class="selector-tag">deg</span>,</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51), </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 25%,</span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 50%,</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 75%,</span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 100%</span><br><span class="line">);</span><br><span class="line"><span class="selector-tag">background-size</span>: 18<span class="selector-tag">px</span> 31<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">repeating-linear-gradient</span>(60<span class="selector-tag">deg</span>,</span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51), </span><br><span class="line">    <span class="selector-tag">rgb</span>(255, 187, 51) 15<span class="selector-tag">px</span>, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 0, </span><br><span class="line">    <span class="selector-tag">rgb</span>(85, 136, 187) 30<span class="selector-tag">px</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h2 id="三、平行四边形和梯形"><a href="#三、平行四边形和梯形" class="headerlink" title="三、平行四边形和梯形"></a>三、平行四边形和梯形</h2><p>使用 transform 属性可以很轻松的创建一个平行四边形</p>
-<p><img src="https://s1.ax1x.com/2018/08/12/Pccsqf.png" alt="Pccsqf.png"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(85, 136, 187);</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">skewX</span>(-30deg);</span><br><span class="line">    span &#123;</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">skewX</span>(30<span class="selector-tag">deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>缺点：需要两个元素、修改的话需要修改两个地方。</p>
-<p>如何使用一个元素就实现这样的效果。</p>
-<p>解决办法：将平行四边形的背景设置在伪元素上，对伪元素进行变形。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">120px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">600</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    &amp;::after &#123;</span><br><span class="line">        content: '';</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 0;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">right</span>: 0;</span><br><span class="line">        <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">skewX</span>(<span class="selector-tag">-30deg</span>);</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">rgb</span>(85, 136, 187);</span><br><span class="line">        <span class="selector-tag">z-index</span>: <span class="selector-tag">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>梯形的概念比平行四边形更加宽泛，只需要两条边平行即可。梯形常用于标签页，之前常用伪元素方法来实现一个梯形。<br><img src="https://s1.ax1x.com/2018/08/12/PccfRs.png" alt="PccfRs.png"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trapezoid</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">180px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(85, 136, 170);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(255, 255, 255);</span><br><span class="line">    &amp;::before,</span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">border-top</span>: <span class="number">180px</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-bottom</span>: <span class="number">0</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-right</span>: <span class="number">100px</span> solid <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">right</span>: -<span class="number">240px</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">border-top</span>: <span class="number">180px</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-bottom</span>: <span class="number">0</span> solid transparent;</span><br><span class="line">        <span class="attribute">border-left</span>: <span class="number">240px</span> solid <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>缺点：</p>
-<ul>
-<li>把两个伪元素都使用了；</li>
-<li>需要修改形状时，需要修改的方过多；</li>
-<li>不能给梯形加边框、阴影；</li>
-<li><p>不能设置成圆角梯形；</p>
-<p>通过构造平行四边形的思想，对矩形进行变形。但是这次不采用 2d 平面的变形，而是 3d 平面变形，通过视觉差来构造一个梯形。</p>
-</li>
-</ul>
-<p>这里需要用到 transform 属性3d变换特性：</p>
-<ul>
-<li>perspective</li>
-<li>rotate3d (rotateX rotateY rotateZ)</li>
-<li>transform-origin</li>
-<li>scale3d (scaleX scaleY scaleZ)<br>实现一个最简单的梯形所需要的代码只有以下一行：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(30<span class="selector-tag">deg</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>与 2d 变换不同，3d 内部变形是不可逆的，因此与构造平行四边形相似，我们也可以将图形的变形放在伪元素上。</p>
-<p><img src="https://s1.ax1x.com/2018/08/12/PccIs0.png" alt="PccIs0.png"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trapezoid</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">180px</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(255, 255, 255);</span><br><span class="line">    &amp;::before &#123;</span><br><span class="line">        content: '';</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 0;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">right</span>: 0;</span><br><span class="line">        <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">rgb</span>(85, 136, 170);</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(30<span class="selector-tag">deg</span>);</span><br><span class="line">        <span class="selector-tag">z-index</span>: <span class="selector-tag">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优化</p>
-<p>1、修改 transform-origin 属性，控制转动轴<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform-origin</span>: <span class="selector-tag">bottom</span>;</span><br></pre></td></tr></table></figure></p>
-<p>2、通过 scale3d 属性而非 padding 属性来修正视觉大小，同时兼顾了优雅降级<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(30<span class="selector-tag">deg</span>) <span class="selector-tag">scaleY</span>(2<span class="selector-class">.25</span>);</span><br></pre></td></tr></table></figure></p>
-<p>3、添加圆角、阴影、背景渐变<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">right</span>, <span class="selector-tag">rgb</span>(85, 136, 170), <span class="selector-tag">rgb</span>(255, 187, 51));</span><br><span class="line"><span class="selector-tag">border-top-right-radius</span>: 60<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-top-left-radius</span>: 60<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">box-shadow</span>: 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 1<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(85, 136, 170, <span class="selector-class">.2</span>);</span><br></pre></td></tr></table></figure></p>
-<p>4、改变 transform-origin 得到不同斜边的梯形<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">perspective</span>(200<span class="selector-tag">px</span>) <span class="selector-tag">rotateX</span>(10<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">transform-origin</span>: <span class="selector-tag">left</span>;</span><br></pre></td></tr></table></figure></p>
-<p>缺点</p>
-<p>斜边的角度依赖于元素的宽度。因此，当元素的内容长度不等时，想要得到斜度一致的梯形就不容易了。</p>
-<p>3d 变换具体实现原理参见 matrix3d</p>
-<h2 id="四、阴影"><a href="#四、阴影" class="headerlink" title="四、阴影"></a>四、阴影</h2><p>投影首先会想到 box-shadow 这个属性，根据以上的介绍，我们可以轻松的做出一个元素的阴影</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#shadow</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgb</span>(255, 187, 51);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">240px</span> <span class="number">120px</span> <span class="number">0</span> <span class="number">0</span> red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么如何针对一张图片实现其对应的阴影？在页面的例如头像显示会遇到这种效果<br><img src="https://s1.ax1x.com/2018/08/12/PccboF.jpg" alt="PccboF.jpg"></p>
-<p>这里将会使用到CSS3里面的 filter 属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#logo</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'../img/logo.svg'</span>) no-repeat;</span><br><span class="line">    &amp;::after &#123;</span><br><span class="line">        content: '';</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">top</span>: 40<span class="selector-tag">px</span>;</span><br><span class="line">        <span class="selector-tag">left</span>: 0;</span><br><span class="line">        <span class="selector-tag">width</span>: 100%;</span><br><span class="line">        <span class="selector-tag">height</span>: 100%;</span><br><span class="line">        background: url('../img/logo.svg') no-repeat;</span><br><span class="line">        <span class="selector-tag">background-size</span>: 100% 100%;</span><br><span class="line">        <span class="selector-tag">filter</span>: <span class="selector-tag">blur</span>(10<span class="selector-tag">px</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
           
+此文引用自：火头军人 ,仅为学习目的。
+
+在页面构建中，能明显提升页面显示质量的一些CSS小技巧。很多简洁美观的页面表现，可以使用CSS3代码即可实现，减少图片的使用。
+一、边框内圆角我们在设计例如按钮等控件的时候，会遇到这样的设计：只有内侧有圆角，而边框或者描边的四个角还是保持直角的形状，用以下
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/12/css技巧/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1753,7 +1363,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1841,69 +1451,22 @@
       
         
           
-            <blockquote>
-<p>工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。</p>
-</blockquote>
-<h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><p><img src="https://s1.ax1x.com/2018/08/05/PDLrVI.jpg" alt="PDLrVI.jpg"></p>
-<ul>
-<li><p>1.1 在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点开始的倒置的树状结构。</p>
-</li>
-<li><p>1.2 文件系统的最顶层是由根目录开始的，系统使用 / 来表示根目录。在根目录之下的既可以是目录，也可以是文件，而每一个目录中又可以包含子目录文件。如此反复就可以构成一个庞大的文件系统。</p>
-</li>
-<li><p>1.3 在Linux文件系统中有两个特殊的目录，一个用户所在的工作目录，也叫当前目录，可以使用一个点 . 来表示；另一个是当前目录的上一级目录，也叫父目录，可以使用两个点 .. 来表示。</p>
-</li>
-<li>. ：代表当前的目录，也可以使用 ./ 来表示；</li>
-<li>.. ：代表上一层目录，也可以 ../ 来代表。</li>
-<li>如果一个目录或文件名以一个点 . 开始，表示这个目录或文件是一个隐藏目录或文件(如：.bashrc)。即以默认方式查找时，不显示该目录或文件。</li>
-</ul>
-<h2 id="2-文件相关操作"><a href="#2-文件相关操作" class="headerlink" title="2.文件相关操作"></a>2.文件相关操作</h2><h3 id="2-1-删除文件"><a href="#2-1-删除文件" class="headerlink" title="2.1 删除文件"></a>2.1 删除文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm file.txt      <span class="comment"># 删除文件，后面可以跟多个文件，以空格隔开</span></span><br><span class="line">rm -rf 文件夹    <span class="comment"># 递归删除整个目录，并且不询问用户[强制删除]</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-新建文件"><a href="#2-2-新建文件" class="headerlink" title="2.2 新建文件"></a>2.2 新建文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi test.txt     <span class="comment">#若果当前目录木有test.txt文件，则会自动新建</span></span><br><span class="line">touch test.txt   <span class="comment"># 新建test.txt文件</span></span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 2.3 更改文件属组</span></span><br><span class="line">``` bash</span><br><span class="line">chown users:jessie file1.txt  <span class="comment">#修改文件file1.txt 为jessie组的users用户所有</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-3-更改文件属性-读-写-执行"><a href="#2-3-更改文件属性-读-写-执行" class="headerlink" title="2.3 更改文件属性[读\写\执行]"></a>2.3 更改文件属性[读\写\执行]</h3><p>Linux/Unix 的文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">chmod [-cfvR] [--<span class="built_in">help</span>] [--version] mode file...</span><br><span class="line">权限设定参数：[ugoa...][[+-=][rwxX]...][,...]</span><br><span class="line"></span><br><span class="line">u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</span><br><span class="line">+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。</span><br><span class="line">r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</span><br><span class="line"></span><br><span class="line">chmod a+r file1.txt   <span class="comment"># 将文件 file1.txt 设为所有人皆可读取 </span></span><br><span class="line">chmod u+x ex1.py      <span class="comment"># 将 ex1.py 设定为只有该文件拥有者可以执行</span></span><br><span class="line">chmod -R a+r *        <span class="comment"># 将目前目录下的所有文件与子目录皆设为任何人可读取，[其中R代表递归操作]</span></span><br><span class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`</span><br><span class="line">chmod 777 file</span><br><span class="line"></span><br><span class="line">其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。</span><br><span class="line"></span><br><span class="line">r=4，w=2，x=1</span><br><span class="line">若要rwx属性则4+2+1=7；</span><br><span class="line">若要rw-属性则4+2=6；</span><br><span class="line">若要r-x属性则4+1=5。</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-4-解压、压缩文件"><a href="#2-4-解压、压缩文件" class="headerlink" title="2.4 解压、压缩文件"></a>2.4 解压、压缩文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip 目录   # 将传入目录里的文件压缩为zip文件,并放置在上一级目录</span><br><span class="line">unzip file.zip  # 将file.zip解压并放在当前目录</span><br><span class="line">unzip file.zip -d cn  #将file.zip解压并存放在cn目录，没有此目录会自动新建</span><br></pre></td></tr></table></figure>
-<h3 id="2-5-服务器间拷贝文件"><a href="#2-5-服务器间拷贝文件" class="headerlink" title="2.5 服务器间拷贝文件"></a>2.5 服务器间拷贝文件</h3><blockquote>
-<p>Linux scp命令用于Linux之间复制文件和目录。</p>
-</blockquote>
-<blockquote>
-<p>scp是 secure copy的缩写, scp是linux系统下基于ssh登陆进行安全的远程文件拷贝命令。</p>
-</blockquote>
-<blockquote>
-<p>此命令根据执行机是不是目标机器，可对应实现“推文件”和“拉取文件”操作。</p>
-</blockquote>
-<p><strong>语法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp [可选参数] file_source file_target</span><br></pre></td></tr></table></figure></p>
-<p><strong>重要参数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-p：保留原文件的修改时间，访问时间和访问权限。</span><br><span class="line">-q： 不显示传输进度条。</span><br><span class="line">-r： 递归复制整个目录。</span><br></pre></td></tr></table></figure></p>
-<p><strong>实例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /home/space/music/1.mp3 www.xxx.com:/home/root/others/music/001.mp3</span><br></pre></td></tr></table></figure></p>
-<p><strong>命令格式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -r local_folder remote_username@remote_ip:remote_folder </span><br><span class="line">或者 </span><br><span class="line">scp -r local_folder remote_ip:remote_folder</span><br></pre></td></tr></table></figure></p>
-<p><strong>实例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /home/space/music/ root@www.xxx.com:/home/root/others/</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-其他"><a href="#3-其他" class="headerlink" title="3.其他"></a>3.其他</h2><h3 id="3-1-定时任务"><a href="#3-1-定时任务" class="headerlink" title="3.1 定时任务"></a>3.1 定时任务</h3><p>Linux crontab是用来定期执行程序的命令。</p>
-<p>当安装完成操作系统之后，默认便会启动此任务调度命令。</p>
-<p>crond命令每分锺会定期检查是否有要执行的工作，如果有要执行的工作便会自动执行该工作。</p>
-<p>而linux任务调度的工作主要分为以下两类：</p>
-<ol>
-<li>系统执行的工作：系统周期性所要执行的工作，如备份系统数据、清理缓存</li>
-<li>个人执行的工作：某个用户定期要做的工作，例如每隔10分钟检查邮件服务器是否有新信，这些工作可由每个用户自行设置</li>
-</ol>
-<blockquote>
-<p>语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab [ -u user ] &#123; -l | -r | -e &#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>说明：</p>
-<p>crontab 是用来让使用者在固定时间或固定间隔执行程序之用，换句话说，也就是类似使用者的时程表。</p>
-<p>-u user 是指设定指定 user 的时程表，这个前提是你必须要有其权限(比如说是 root)才能够指定他人的时程表。如果不使用 -u user 的话，就是表示设定自己的时程表。</p>
-<p>参数说明：</p>
-<p>-e : 执行文字编辑器来设定时程表，内定的文字编辑器是 VI，如果你想用别的文字编辑器，则请先设定 VISUAL 环境变数来指定使用那个文字编辑器(比如说 setenv VISUAL joe)</p>
-<p>-r : 删除目前的时程表</p>
-<p>-l : 列出目前的时程表</p>
-<p>时程表的格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1 f2 f3 f4 f5 program</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li>
-<li>当 f1 为 <em> 时表示每分钟都要执行 program，f2 为 </em> 时表示每小时都要执行程序，其馀类推</li>
-<li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li>
-<li>当 f1 为 <em>/n 时表示每 n 分钟个时间间隔执行一次，f2 为 </em>/n 表示每 n 小时个时间间隔执行一次，其馀类推</li>
-<li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推</li>
-</ul>
-<p>使用者也可以将所有的设定先存放在文件中，用 crontab file 的方式来设定时程表。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">0 */2 * * * /sbin/service httpd restart  <span class="comment">#意思是每两个小时重启一次apache </span></span><br><span class="line"></span><br><span class="line">50 7 * * * /sbin/service sshd start  <span class="comment">#意思是每天7：50开启ssh服务 </span></span><br><span class="line"></span><br><span class="line">50 22 * * * /sbin/service sshd stop  <span class="comment">#意思是每天22：50关闭ssh服务 </span></span><br><span class="line"></span><br><span class="line">0 0 1,15 * * fsck /home  <span class="comment">#每月1号和15号检查/home 磁盘 </span></span><br><span class="line"></span><br><span class="line">1 * * * * /home/bruce/backup  <span class="comment">#每小时的第一分执行 /home/bruce/backup这个文件 </span></span><br><span class="line"></span><br><span class="line">00 03 * * 1-5 find /home <span class="string">"*.xxx"</span> -mtime +4 -<span class="built_in">exec</span> rm &#123;&#125; \;  <span class="comment">#每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。</span></span><br><span class="line"></span><br><span class="line">30 6 */10 * * ls  <span class="comment">#意思是每月的1、11、21、31日是的6：30执行一次ls命令</span></span><br></pre></td></tr></table></figure></p>
-<p>【未完待续】</p>
-
           
+工作原因，需要学习并使用linux以及shell后台相关操作。借此，总结一下遇到的常见操作。一来是方便自己查询，而来也是对自己学习做个总结。
+
+1.基础知识
+
+1.1 在 Linux 或 Unix 操作系统中，所有的文件和目录都被组织成以一个根节点开始的倒置的树状结构。
+
+1.2 文件系统的最顶层
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/07/LINUX-初体验/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1955,7 +1518,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaiwen0425">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -2021,17 +1584,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/06/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2100,6 +1661,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="https://s1.ax1x.com/2018/08/05/PDbmd0.jpg"
+                alt="Kaiwen0425" />
+            
               <p class="site-author-name" itemprop="name">Kaiwen0425</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -2144,6 +1709,34 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kaiweno425" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaiwen0425@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kaiwen0425/activities" target="_blank" title="֪��">
+                      
+                        <i class="fa fa-fw fa-globe"></i>֪��</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/5075683550?refer_flag=1001030101_&is_hot=1" target="_blank" title="΢��">
+                      
+                        <i class="fa fa-fw fa-globe"></i>΢��</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -2170,7 +1763,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -2188,7 +1781,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -2237,11 +1830,16 @@
 
 
 
+  
+  
 
 
 
 
 
+
+
+  
 
 
 
@@ -2275,6 +1873,21 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
 
   
 
@@ -2287,6 +1900,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
@@ -2348,6 +1968,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
 
   
 
